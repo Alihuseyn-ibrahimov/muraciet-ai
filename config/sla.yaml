@@ -1,0 +1,39 @@
+# Müddətlər və taymerlər. Qanuni müddətlər "Vətəndaşların müraciətləri haqqında" Qanundan (№1308-IVQ),
+# daxili hədəflər qurumun qərarı ilə dəyişdirilə bilər.
+timezone: Asia/Baku
+
+# Vaxtları mütləq dırnaq içində yazın ("09:00"), əks halda YAML onları rəqəm kimi oxuyur
+work_hours:
+  start: "09:00"
+  end: "18:00"
+work_days: [mon, tue, wed, thu, fri]
+
+legal:
+  review_workdays: 15              # m. 10.1: baxılma müddəti
+  max_extension_workdays: 30       # m. 10.2: uzatmanın maksimumu
+  urgent_hours: 24                 # m. 10.4: təcili müraciət (iş saatı yox, təqvim saatı)
+  redirect_workdays: 3             # m. 7.10: aidiyyəti üzrə göndərmə
+  not_reviewed_notice_workdays: 5  # m. 8.2: baxılmamış saxlama barədə bildiriş
+  # m. 10.5: müddət müraciətin daxil olduğu gündən başlayır. true olanda daxil olduğu iş günü
+  # 1-ci gün sayılır, yəni son tarix daha erkən çıxır (ehtiyatlı şərh). Hüquqşünas təsdiqləməlidir.
+  count_receipt_day: true
+
+escalation:
+  unassigned_coordinator_work_hours: 4     # təyin olunmayıb → koordinator və əvəzedici
+  unassigned_head_work_hours: 8            # təyin olunmayıb → rəhbər
+  urgent_unassigned_coordinator_hours: 1   # təcili: təqvim saatı, 24/7
+  urgent_unassigned_head_hours: 2
+  due_reminder_workdays: [3, 1]            # son tarixə 3 gün qalıb → icraçı; 1 gün → icraçı və koordinator
+
+citizen:
+  waiting_reminder_workdays: 5       # vətəndaş əməkdaşın sualını cavablamayıb → xatırlatma
+  waiting_staff_prompt_workdays: 10  # → icraçıya: mövcud məlumatla cavab ver və ya m. 8.1.5
+  auto_close_days: 7                 # cavabdan sonra reaksiya olmasa avtomatik bağlanır (təqvim günü)
+
+outbox:
+  retry_delays_seconds: [60, 300, 900, 3600, 14400]  # 1 dəq, 5 dəq, 15 dəq, 1 saat, 4 saat
+  stale_sending_minutes: 10                          # restartdan sonra ilişib qalan mesajlar
+
+sessions:
+  citizen_ttl_hours: 24
+  staff_ttl_minutes: 30

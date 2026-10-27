@@ -1,0 +1,517 @@
+{
+  "agent": "qa",
+  "model": "anthropic/claude-sonnet-5-5 effort=medium",
+  "n": 22,
+  "run_at": "2026-10-21T19:17:15+04:00",
+  "metrics": {
+    "exact_match": 1.0,
+    "clean_false_positive_rate": 0.0,
+    "incomplete": 0,
+    "by_code": {
+      "contradicts_kb": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "missing_appeal_procedure": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "missing_measures": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "pii_other_person": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "spelling": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "tone": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "unanswered_question": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "errors": []
+  },
+  "latency_ms": {
+    "p50": 2368,
+    "p95": 3497
+  },
+  "rows": [
+    {
+      "case": {
+        "summary": "Pensiya 3 aydır köçmür",
+        "outcome": "satisfied",
+        "expected": [],
+        "answer": "Hörmətli vətəndaş, müraciətiniz araşdırılmışdır. Bankın texniki xətası səbəbindən dayandırılmış pensiya ödənişləriniz bərpa edilmiş, 3 aylıq borc 24.10.2026 tarixində hesabınıza köçürülmüşdür."
+      },
+      "pred": {
+        "codes": [],
+        "complete": true,
+        "issues": []
+      },
+      "latency_ms": 1820
+    },
+    {
+      "case": {
+        "summary": "Ünvanlı sosial yardım müraciətinə cavab gecikir",
+        "outcome": "satisfied",
+        "expected": [],
+        "answer": "Hörmətli vətəndaş, ünvanlı dövlət sosial yardım müraciətinizə baxılmış, ailənizə 01.11.2026 tarixindən sosial yardım təyin edilmişdir."
+      },
+      "pred": {
+        "codes": [],
+        "complete": true,
+        "issues": []
+      },
+      "latency_ms": 1966
+    },
+    {
+      "case": {
+        "summary": "Əlilliyə necə müraciət etməyi soruşur",
+        "outcome": "explained",
+        "expected": [],
+        "answer": "Hörmətli vətəndaş, əlilliyinizin qiymətləndirilməsi üçün qeydiyyatda olduğunuz ərazi üzrə tibb müəssisəsinə müraciət edərək forma-88 sənədini rəsmiləşdirməlisiniz. Forma-88 göndərişi elektron sistemə daxil edildikdən sonra qiymətləndirmə aparılacaq."
+      },
+      "pred": {
+        "codes": [],
+        "complete": true,
+        "issues": []
+      },
+      "latency_ms": 1360
+    },
+    {
+      "case": {
+        "summary": "Birdəfəlik maddi yardım üçün hara müraciət edəcəyini soruşur",
+        "outcome": "explained",
+        "expected": [],
+        "answer": "Hörmətli vətəndaş, birdəfəlik maddi yardımla bağlı ərizənizi şəxsiyyət vəsiqəsinin surəti və əlilliyi təsdiq edən sənədlə birlikdə Sosial Xidmətlər Agentliyinin sxa@sosial.gov.az elektron ünvanına göndərə bilərsiniz. Əlavə məlumat üçün telefon: (012) 525 41 30."
+      },
+      "pred": {
+        "codes": [],
+        "complete": true,
+        "issues": []
+      },
+      "latency_ms": 1591
+    },
+    {
+      "case": {
+        "summary": "Əlilliyin təyin edilməsini xahiş edir",
+        "outcome": "rejected",
+        "expected": [],
+        "answer": "Hörmətli vətəndaş, tibbi-sosial ekspertiza zamanı təqdim olunan sənədlərə əsasən əlillik meyarlarına uyğunluq müəyyən edilmədiyi üçün tələbiniz təmin edilmədi. Bu qərarla razı deyilsinizsə, ondan inzibati qaydada (yuxarı dövlət orqanına) və (və ya) məhkəmə qaydasında şikayət verə bilərsiniz."
+      },
+      "pred": {
+        "codes": [],
+        "complete": true,
+        "issues": []
+      },
+      "latency_ms": 1325
+    },
+    {
+      "case": {
+        "summary": "İşsizlikdən sığorta ödənişi gecikir",
+        "outcome": "satisfied",
+        "expected": [],
+        "answer": "Hörmətli vətəndaş, işsizlikdən sığorta ödənişiniz 22.10.2026 tarixində hesabınıza köçürülmüşdür. Əlavə sualınız olarsa, sizinlə +994501234567 nömrəsi ilə əlaqə saxlayacağıq."
+      },
+      "pred": {
+        "codes": [],
+        "complete": true,
+        "issues": []
+      },
+      "latency_ms": 2747
+    },
+    {
+      "case": {
+        "summary": "Ünvanlı sosial yardım üzrə imtina qərarından şikayət edir",
+        "outcome": "rejected",
+        "expected": [],
+        "answer": "Hörmətli vətəndaş, şikayətiniz araşdırılmış, ailənin orta aylıq gəlirinin ehtiyac meyarından yüksək olduğu müəyyən edildiyindən imtina qərarı qanunvericiliyə uyğun hesab edilmişdir. Bu qərarla razı deyilsinizsə, ondan inzibati qaydada (yuxarı dövlət orqanına) və (və ya) məhkəmə qaydasında şikayət verə bilərsiniz."
+      },
+      "pred": {
+        "codes": [],
+        "complete": true,
+        "issues": []
+      },
+      "latency_ms": 1539
+    },
+    {
+      "case": {
+        "summary": "İşəgötürən əməkhaqqını ödəmir",
+        "outcome": "satisfied",
+        "expected": [],
+        "answer": "Hörmətli vətəndaş, Dövlət Əmək Müfəttişliyi Xidməti tərəfindən aparılan yoxlama nəticəsində işəgötürənə göstəriş verilmiş və 2 aylıq əməkhaqqı borcunuz 23.10.2026 tarixində ödənilmişdir."
+      },
+      "pred": {
+        "codes": [],
+        "complete": true,
+        "issues": []
+      },
+      "latency_ms": 3325
+    },
+    {
+      "case": {
+        "summary": "Pensiya 3 aydır köçmür",
+        "outcome": "satisfied",
+        "expected": [
+          "missing_measures"
+        ],
+        "answer": "Hörmətli vətəndaş, müraciətinizə baxılmışdır."
+      },
+      "pred": {
+        "codes": [
+          "missing_measures"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "warning",
+            "code": "missing_measures",
+            "message": "Cavabda pensiyanın köçürülməməsinin səbəbi, görülən iş və ya qərar göstərilməyib; 'baxılmışdır' boş ifadədir. Konkret nəticəni (məs. ödənişin bərpası, tarixi və ya səbəbi) yazın."
+          }
+        ]
+      },
+      "latency_ms": 2676
+    },
+    {
+      "case": {
+        "summary": "Şəhid ailəsi mənzil növbəsində uzun müddət gözləyir",
+        "outcome": "satisfied",
+        "expected": [
+          "missing_measures"
+        ],
+        "answer": "Hörmətli vətəndaş, məlumatınız üçün təşəkkür edirik, nəzərə alınacaq."
+      },
+      "pred": {
+        "codes": [
+          "missing_measures"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "warning",
+            "code": "missing_measures",
+            "message": "Cavab yalnız \"nəzərə alınacaq\" deyir; mənzil növbəsi ilə bağlı nə araşdırıldığını və ya hansı qərar verildiyini (nəticə \"Təmin edildi\" olduğundan konkret nəticəni) bildirin."
+          }
+        ]
+      },
+      "latency_ms": 2733
+    },
+    {
+      "case": {
+        "summary": "Pensiya köçmür və pensiya artımının olub-olmayacağını soruşur",
+        "outcome": "satisfied",
+        "expected": [
+          "unanswered_question"
+        ],
+        "answer": "Hörmətli vətəndaş, pensiya ödənişiniz bərpa edilmiş və 24.10.2026 tarixində hesabınıza köçürülmüşdür."
+      },
+      "pred": {
+        "codes": [
+          "unanswered_question"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "warning",
+            "code": "unanswered_question",
+            "message": "Müraciətdə pensiya artımının olub-olmayacağı barədə sual verilib, cavabda bu barədə heç nə deyilmir. Artım olarsa ictimaiyyətə məlumat veriləcəyini bildirin."
+          }
+        ]
+      },
+      "latency_ms": 2799
+    },
+    {
+      "case": {
+        "summary": "Birdəfəlik yardım üçün hara və hansı sənədlərlə müraciət edəcəyini soruşur",
+        "outcome": "explained",
+        "expected": [
+          "unanswered_question"
+        ],
+        "answer": "Hörmətli vətəndaş, ərizənizi Sosial Xidmətlər Agentliyinin sxa@sosial.gov.az ünvanına göndərə bilərsiniz."
+      },
+      "pred": {
+        "codes": [
+          "unanswered_question"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "warning",
+            "code": "unanswered_question",
+            "message": "Vətəndaş hansı sənədlərlə müraciət edəcəyini də soruşub, cavabda isə sənədlər göstərilməyib. Ərizəyə şəxsiyyət vəsiqəsinin surəti və əlilliyi təsdiq edən sənədin əlavə olunmalı olduğunu yazın."
+          }
+        ]
+      },
+      "latency_ms": 3497
+    },
+    {
+      "case": {
+        "summary": "Bakıda pensiyanın ayın neçəsində ödəndiyini soruşur",
+        "outcome": "explained",
+        "expected": [
+          "contradicts_kb"
+        ],
+        "answer": "Hörmətli vətəndaş, Bakı şəhərində pensiyalar hər ayın 20-28-i aralığında ödənilir."
+      },
+      "pred": {
+        "codes": [
+          "contradicts_kb"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "warning",
+            "code": "contradicts_kb",
+            "message": "Bakı şəhərində pensiyalar hər ayın 8-15-i aralığında ödənilir; 20-28-i aralığı digər bölgələrə aiddir. Müddəti düzəldin."
+          }
+        ]
+      },
+      "latency_ms": 1917
+    },
+    {
+      "case": {
+        "summary": "Əlilliyə müraciət qaydasını soruşur",
+        "outcome": "explained",
+        "expected": [
+          "contradicts_kb"
+        ],
+        "answer": "Hörmətli vətəndaş, əlillik üçün birbaşa Nazirliyə ərizə yazmalısınız, forma-88 sənədi tələb olunmur."
+      },
+      "pred": {
+        "codes": [
+          "contradicts_kb"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "warning",
+            "code": "contradicts_kb",
+            "message": "Cavabda forma-88 tələb olunmur deyilir, lakin rəsmi mənbəyə görə əvvəlcə qeydiyyat üzrə tibb müəssisəsinə müraciət edib forma-88 rəsmiləşdirmək lazımdır. Düzgün qaydanı yazın."
+          }
+        ]
+      },
+      "latency_ms": 2865
+    },
+    {
+      "case": {
+        "summary": "Pensiya köçmür",
+        "outcome": "satisfied",
+        "expected": [
+          "tone"
+        ],
+        "answer": "Neçə dəfə yazmaq olar? Pensiyanız köçürülüb, daha narahat etməyin."
+      },
+      "pred": {
+        "codes": [
+          "tone"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "info",
+            "code": "tone",
+            "message": "Cavab kobud və vətəndaşı günahlandıran tonda yazılıb (\"Neçə dəfə yazmaq olar?\", \"narahat etməyin\"). Nəzakətli, rəsmi üslubda yenidən yazın."
+          }
+        ]
+      },
+      "latency_ms": 2423
+    },
+    {
+      "case": {
+        "summary": "İşsizdir, iş tapmaq üçün kömək istəyir",
+        "outcome": "explained",
+        "expected": [
+          "tone"
+        ],
+        "answer": "Ay qardaş, iş tapmaq sizin öz işinizdir. emas.sosial.gov.az saytında qeydiyyatdan keçin, vakansiyalara orada baxın."
+      },
+      "pred": {
+        "codes": [
+          "tone"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "info",
+            "code": "tone",
+            "message": "\"Ay qardaş\" kimi danışıq dili və \"iş tapmaq sizin öz işinizdir\" ifadəsi vətəndaşı günahlandırır. Rəsmi və nəzakətli üslubda yazın."
+          }
+        ]
+      },
+      "latency_ms": 2313
+    },
+    {
+      "case": {
+        "summary": "Ünvanlı sosial yardım gecikir",
+        "outcome": "satisfied",
+        "expected": [
+          "spelling"
+        ],
+        "answer": "Hormetli vetendas, sosial yardim teyin edildi ve odenis kocuruldu."
+      },
+      "pred": {
+        "codes": [
+          "spelling"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "info",
+            "code": "spelling",
+            "message": "Cavab Azərbaycan hərfləri olmadan yazılıb (Hörmətli, vətəndaş, yardım, təyin, və, ödəniş, köçürüldü). Düzgün orfoqrafiya ilə yazın."
+          }
+        ]
+      },
+      "latency_ms": 2874
+    },
+    {
+      "case": {
+        "summary": "Pensiya köçmür",
+        "outcome": "satisfied",
+        "expected": [
+          "spelling"
+        ],
+        "answer": "Hörmətli vətəndaş, müraciyətiniz əsasında pensiya ödənişiniz 24.10.2026 tarixdə bərpa olunmuşdur."
+      },
+      "pred": {
+        "codes": [
+          "spelling"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "info",
+            "code": "spelling",
+            "message": "\"müraciyətiniz\" sözü səhv yazılıb, düzgün forma \"müraciətiniz\" olmalıdır."
+          }
+        ]
+      },
+      "latency_ms": 2117
+    },
+    {
+      "case": {
+        "summary": "Əlilliyin təyin edilməsini xahiş edir",
+        "outcome": "rejected",
+        "expected": [
+          "missing_appeal_procedure"
+        ],
+        "answer": "Hörmətli vətəndaş, tibbi-sosial ekspertiza zamanı əlillik meyarlarına uyğunluq müəyyən edilmədiyi üçün tələbiniz təmin edilmədi."
+      },
+      "pred": {
+        "codes": [
+          "missing_appeal_procedure"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "critical",
+            "code": "missing_appeal_procedure",
+            "message": "Şikayət qaydası izah olunmayıb (m. 7.8)"
+          }
+        ]
+      },
+      "latency_ms": 1860
+    },
+    {
+      "case": {
+        "summary": "Birdəfəlik maddi yardım və mənzil növbəsinə götürülməyi xahiş edir",
+        "outcome": "partial",
+        "expected": [
+          "missing_appeal_procedure"
+        ],
+        "answer": "Hörmətli vətəndaş, ailənizə 23.10.2026 tarixində birdəfəlik maddi yardım ödənilmiş, mənzil növbəsinə götürülmə isə müvafiq kateqoriyaya aid olmadığınız üçün təmin edilməmişdir."
+      },
+      "pred": {
+        "codes": [
+          "missing_appeal_procedure"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "critical",
+            "code": "missing_appeal_procedure",
+            "message": "Şikayət qaydası izah olunmayıb (m. 7.8)"
+          }
+        ]
+      },
+      "latency_ms": 2749
+    },
+    {
+      "case": {
+        "summary": "Pensiya köçmür",
+        "outcome": "satisfied",
+        "expected": [
+          "pii_other_person"
+        ],
+        "answer": "Hörmətli vətəndaş, pensiya ödənişiniz 24.10.2026 tarixində bərpa edilmişdir. Əlavə məlumat üçün qonşunuzla 0552223344 nömrəsi ilə əlaqə saxlaya bilərsiniz."
+      },
+      "pred": {
+        "codes": [
+          "pii_other_person"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "critical",
+            "code": "pii_other_person",
+            "message": "Cavabda başqa şəxsin telefon, FİN, e-poçt və ya kart məlumatı var"
+          }
+        ]
+      },
+      "latency_ms": 4504
+    },
+    {
+      "case": {
+        "summary": "Ünvanlı sosial yardımın məbləğinin yenidən hesablanmasını xahiş edir",
+        "outcome": "satisfied",
+        "expected": [
+          "pii_other_person"
+        ],
+        "answer": "Hörmətli vətəndaş, sosial yardımın məbləği yenidən hesablanmış və 45 manat artırılmışdır. Yoxlama zamanı 7XYZ89K FİN-li şəxsin gəlir məlumatları nəzərə alınmışdır."
+      },
+      "pred": {
+        "codes": [
+          "pii_other_person"
+        ],
+        "complete": true,
+        "issues": [
+          {
+            "severity": "critical",
+            "code": "pii_other_person",
+            "message": "Cavabda başqa şəxsin telefon, FİN, e-poçt və ya kart məlumatı var"
+          }
+        ]
+      },
+      "latency_ms": 2173
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# Konteynerdə işləyən shell skriptləri Windows-da da LF ilə qalmalıdır
+*.sh text eol=lf

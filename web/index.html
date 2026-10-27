@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vətəndaş Müraciətləri</title>
+<style>
+  :root { --bg:#f4f6f9; --card:#fff; --text:#1d2433; --muted:#6b7385; --brand:#0b5cad; --user:#0b5cad; --bot:#eef1f6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#12151b; --card:#1b2029; --text:#e6e9ef; --muted:#9aa3b5; --brand:#5aa2ef; --user:#2563b8; --bot:#262c37; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; background:var(--bg); color:var(--text);
+         display:flex; justify-content:center; min-height:100vh; }
+  .app { width:100%; max-width:720px; display:flex; flex-direction:column; height:100vh; padding:16px; }
+  header { display:flex; align-items:center; justify-content:space-between; padding:8px 0 16px; }
+  header h1 { font-size:18px; margin:0; }
+  header small { color:var(--muted); }
+  button { font:inherit; cursor:pointer; border:0; border-radius:10px; }
+  .ghost { background:transparent; color:var(--brand); padding:6px 10px; }
+  #log { flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:10px; padding:12px; background:var(--card);
+         border-radius:14px; }
+  .msg { max-width:85%; padding:10px 14px; border-radius:14px; white-space:pre-wrap; word-wrap:break-word; }
+  .user { align-self:flex-end; background:var(--user); color:#fff; border-bottom-right-radius:4px; }
+  .bot { align-self:flex-start; background:var(--bot); border-bottom-left-radius:4px; }
+  .meta { font-size:12px; color:var(--muted); align-self:flex-start; margin-top:-6px; }
+  form { display:flex; gap:8px; padding-top:12px; }
+  textarea { flex:1; resize:none; font:inherit; padding:10px 12px; border-radius:10px; border:1px solid #c9cfda;
+             background:var(--card); color:var(--text); min-height:44px; }
+  .send { background:var(--brand); color:#fff; padding:0 18px; }
+  .send:disabled { opacity:.5; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div><h1>Vətəndaş Müraciətləri</h1><small>Virtual köməkçi • 24/7</small></div>
+    <button class="ghost" id="reset">Yeni söhbət</button>
+  </header>
+  <div id="log" aria-live="polite"></div>
+  <form id="f">
+    <textarea id="q" rows="1" placeholder="Sualınızı yazın…" required></textarea>
+    <button class="send" id="send">Göndər</button>
+  </form>
+</div>
+<script>
+  const log = document.getElementById('log'), q = document.getElementById('q'), send = document.getElementById('send');
+  let uid;
+  try { uid = localStorage.getItem('uid') || crypto.randomUUID(); localStorage.setItem('uid', uid); }
+  catch { uid = crypto.randomUUID(); }
+
+  function add(text, cls, meta) {
+    const d = document.createElement('div'); d.className = 'msg ' + cls; d.textContent = text; log.append(d);
+    if (meta) { const m = document.createElement('div'); m.className = 'meta'; m.textContent = meta; log.append(m); }
+    log.scrollTop = log.scrollHeight;
+  }
+  add('Salam! Xidmətlər və prosedurlar haqqında sual verə bilərsiniz. Rəsmi müraciət Telegram botumuz vasitəsilə qeydə alınır.', 'bot');
+
+  document.getElementById('f').onsubmit = async (e) => {
+    e.preventDefault();
+    const text = q.value.trim(); if (!text) return;
+    add(text, 'user'); q.value = ''; send.disabled = true;
+    try {
+      const r = await fetch('/api/chat', { method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ session_id: uid, message: text }) });
+      const data = await r.json();
+      add(r.ok ? data.reply : 'Xəta baş verdi.', 'bot');
+    } catch { add('Serverlə əlaqə yoxdur.', 'bot'); }
+    send.disabled = false; q.focus();
+  };
+  q.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send.click(); } });
+  document.getElementById('reset').onclick = () => {  // yeni sessiya: köhnə dialoq yaddaşı istifadə olunmur
+    uid = crypto.randomUUID();
+    try { localStorage.setItem('uid', uid); } catch {}
+    log.innerHTML = ''; add('Yeni söhbət başladı. Necə kömək edə bilərəm?', 'bot');
+  };
+</script>
+</body>
+</html>

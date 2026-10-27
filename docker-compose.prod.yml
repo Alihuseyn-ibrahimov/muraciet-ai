@@ -1,0 +1,59 @@
+# Production: docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+# (docker-compose.override.yml ilə birləşdirilmir: heç bir port açılmır.)
+#
+# Sirlər .env-də deyil, ./secrets/ qovluğundakı fayllardadır (hər faylda bir dəyər, git-ə düşmür).
+# Konteynerdə /run/secrets/<ad> kimi görünür və app/config.py onları sahənin adı ilə oxuyur.
+# .env.prod-da yalnız sirr olmayan parametrlər qalır (ORG_NAME, HOTLINE_TEXT, bot adları, RETENTION_YEARS...).
+#
+#   secrets/anthropic_api_key        secrets/data_encryption_keys   secrets/hmac_key
+#   secrets/citizen_bot_token        secrets/staff_bot_token        secrets/service_token
+#   secrets/admin_api_key            secrets/postgres_password      secrets/n8n_db_password
+#   secrets/app_db_password          secrets/backup_passphrase (ehtiyat nüsxələrin şifrəsi)
+#   secrets/app_database_url         postgresql+psycopg://muraciet_app:<parol>@postgres:5432/muraciet_v2
+#   secrets/migration_database_url   postgresql+psycopg://muraciet:<parol>@postgres:5432/muraciet_v2
+#
+# DATA_ENCRYPTION_KEYS-in ehtiyat nüsxəsi ayrıca saxlanılmalıdır: açar itsə, şifrələnmiş məlumat oxunmaz.
+
+x-prod: &prod
+  env_file: .env.prod
+  environment: &prod-env
+    # Baza URL-ləri parol saxlayır: boş dəyər mühitdən götürülmür, sirr faylı oxunur (env_ignore_empty)
+    APP_DATABASE_URL: ""
+    MIGRATION_DATABASE_URL: ""
+    EMBEDDINGS_URL: http://ollama:11434
+    REDIS_URL: redis://redis:6379/0
+    API_BASE_URL: http://api:8000
+  secrets: [anthropic_api_key, data_encryption_keys, hmac_key, citizen_bot_token, staff_bot_token, service_token,
+            admin_api_key, app_db_password, n8n_db_password, app_database_url, migration_database_url]
+
+services:
+  postgres:
+    environment:
+      POSTGRES_PASSWORD: ""
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    secrets: [postgres_password]
+
+  backup:
+    environment:
+      PGPASSWORD: ""  # skript /run/secrets/postgres_password faylını oxuyur
+    secrets: [backup_passphrase, postgres_password]
+
+  migrate: *prod
+  api: *prod
+  worker: *prod
+  citizen-bot: *prod
+  staff-bot: *prod
+
+secrets:
+  anthropic_api_key: { file: ./secrets/anthropic_api_key }
+  data_encryption_keys: { file: ./secrets/data_encryption_keys }
+  hmac_key: { file: ./secrets/hmac_key }
+  citizen_bot_token: { file: ./secrets/citizen_bot_token }
+  staff_bot_token: { file: ./secrets/staff_bot_token }
+  service_token: { file: ./secrets/service_token }
+  admin_api_key: { file: ./secrets/admin_api_key }
+  app_db_password: { file: ./secrets/app_db_password }
+  n8n_db_password: { file: ./secrets/n8n_db_password }
+  app_database_url: { file: ./secrets/app_database_url }
+  migration_database_url: { file: ./secrets/migration_database_url }
+  postgres_password: { file: ./secrets/postgres_password }

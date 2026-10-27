@@ -1,0 +1,30 @@
+{"question": "Pensiya ayın neçəsində köçürülür?", "answerable": true, "any": ["8-15", "20-28"]}
+{"question": "pensiya ayin necesinde kocurulur", "answerable": true, "any": ["8-15", "20-28"], "lang": "translit"}
+{"question": "Когда перечисляют пенсию?", "answerable": true, "any": ["8-15", "20-28"], "lang": "ru"}
+{"question": "Pensiyada artım olacaqmı?", "answerable": true, "any": ["ictimaiyyət", "məlumat veriləcək"]}
+{"question": "Pensiyam köçməyib, amma qüvvədədir. Nə edim?", "answerable": true, "must": ["bank"]}
+{"question": "Əlilliyə necə müraciət edim?", "answerable": true, "must": ["forma-88"]}
+{"question": "Как оформить инвалидность?", "answerable": true, "must": ["forma-88"], "lang": "ru"}
+{"question": "Əlilliyin meyarlarını harada oxuya bilərəm?", "answerable": true, "must": ["e-qanun.az/framework/49623"]}
+{"question": "Əlilliyi olan şəxs sürücülük vəsiqəsi ala bilərmi?", "answerable": true, "must": ["58065"]}
+{"question": "Dərmanlarımı nazirlik təmin edə bilərmi?", "answerable": true, "any": ["aid deyil"]}
+{"question": "ÜDSY-yə necə müraciət etmək olar?", "answerable": true, "must": ["e-gov.az"]}
+{"question": "udsy ye imtina gelib ne edim", "answerable": true, "any": ["yenidən"], "lang": "translit"}
+{"question": "Ərzaq yardımı paylayırsınız?", "answerable": true, "any": ["keçirilmir"]}
+{"question": "Əlilliyi olanlara birdəfəlik yardım üçün hara yazmalıyam?", "answerable": true, "must": ["sxa@sosial.gov.az"]}
+{"question": "Məşğulluğa onlayn necə qeydiyyatdan keçim?", "answerable": true, "must": ["emas.sosial.gov.az"]}
+{"question": "Nazirlikdə necə işləyə bilərəm?", "answerable": true, "any": ["ise-qebul", "müsabiqə"]}
+{"question": "Sosial Xidmətlər Agentliyinə CV-ni hara göndərim?", "answerable": true, "must": ["sxa_cv@sosial.gov.az"]}
+{"question": "Sosial mənzillərə haradan baxa bilərəm?", "answerable": true, "must": ["ms.sosial.gov.az"]}
+{"question": "Dövlət ev kimlərə verir?", "answerable": true, "any": ["şəhid"]}
+{"question": "Əmək müfəttişliyinə şikayəti necə göndərim?", "answerable": true, "must": ["demx@sosial.gov.az"]}
+{"question": "Qaynar xəttiniz neçədir?", "answerable": true, "must": ["142"]}
+{"question": "Müraciətə neçə günə baxılır?", "answerable": true, "any": ["15 iş", "on beş iş"]}
+{"question": "Nazirin qəbulu nə vaxtdır?", "answerable": true, "any": ["öncədən", "əvvəlcədən", "məlumat veriləcək"]}
+{"question": "Oğlumun xəstəliyi var, hərbi xidmətə yararlıdırmı?", "answerable": true, "any": ["59", "Hərbi-həkim"]}
+{"question": "Avtomobil vergisi nə qədərdir?", "answerable": false}
+{"question": "Pasportu necə dəyişdirə bilərəm?", "answerable": false}
+{"question": "Mənim pensiyamın məbləği nə qədərdir?", "answerable": false}
+{"question": "İşsizlik müavinətinin məbləği nə qədərdir?", "answerable": false}
+{"question": "Ana kapitalı nə vaxt veriləcək?", "answerable": false}
+{"question": "Какой штраф за неправильную парковку?", "answerable": false, "lang": "ru"}

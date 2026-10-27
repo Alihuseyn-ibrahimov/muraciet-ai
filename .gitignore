@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+*.db
+.pytest_cache/
+eval/results.json
+finetune/outputs/
+finetune/*.pt
+data/knowledge/scraped/
+secrets/
+.env.prod
+
+# Bazanın şifrəli ehtiyat nüsxələri (scripts/backup.sh)
+backups/

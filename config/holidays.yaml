@@ -1,0 +1,39 @@
+# Qeyri-iş günləri (həftə sonlarından əlavə). Mənbələr:
+# - Nazirlər Kabinetinin 2 dekabr 2025-ci il tarixli №362 qərarı (Novruz, Ramazan, Qurban 2026):
+#   https://nk.gov.az/uploads/doc/docs/692e89d45e806.pdf
+# - Əmək və Əhalinin Sosial Müdafiəsi Nazirliyi, 2026-cı ilin istehsalat təqvimi (beşgünlük iş həftəsi):
+#   https://sosial.gov.az/az/faydali/istehsalat-teqvimi/2026-ci-ilin-istehsalat-teqvimi
+#
+# complete_years: bütün bayramları və yerdəyişmələri rəsmi təsdiqlənmiş illər.
+# Siyahıda olmayan ilə düşən hesablamada sistem xəbərdarlıq loglayır. Yeni ilin istehsalat təqvimi
+# dərc olunanda (adətən dekabrda) həmin il bura əlavə edilməlidir.
+complete_years: [2026]
+
+days:
+  # --- 2026: bayram və hüzn günləri ---
+  - {date: 2026-01-01, name: Yeni il}
+  - {date: 2026-01-02, name: Yeni il}
+  - {date: 2026-01-20, name: Ümumxalq Hüzn Günü}
+  - {date: 2026-03-08, name: Qadınlar günü}
+  - {date: 2026-03-20, name: "Novruz bayramı, Ramazan bayramı"}
+  - {date: 2026-03-21, name: "Novruz bayramı, Ramazan bayramı"}
+  - {date: 2026-03-22, name: Novruz bayramı}
+  - {date: 2026-03-23, name: Novruz bayramı}
+  - {date: 2026-03-24, name: Novruz bayramı}
+  - {date: 2026-05-09, name: Faşizm üzərində qələbə günü}
+  - {date: 2026-05-27, name: Qurban bayramı}
+  - {date: 2026-05-28, name: "Qurban bayramı, Müstəqillik Günü"}
+  - {date: 2026-06-15, name: Azərbaycan xalqının Milli Qurtuluş Günü}
+  - {date: 2026-06-26, name: Silahlı Qüvvələr Günü}
+  - {date: 2026-11-08, name: Zəfər Günü}
+  - {date: 2026-11-09, name: Dövlət Bayrağı Günü}
+  - {date: 2026-12-31, name: Dünya Azərbaycanlılarının Həmrəyliyi Günü}
+  # --- 2026: keçirilmiş istirahət günləri (istehsalat təqvimi, beşgünlük iş həftəsi) ---
+  - {date: 2026-03-09, name: Keçirilmiş istirahət günü}
+  - {date: 2026-03-25, name: Keçirilmiş istirahət günü}
+  - {date: 2026-03-26, name: Keçirilmiş istirahət günü}
+  - {date: 2026-03-27, name: Keçirilmiş istirahət günü}
+  - {date: 2026-03-30, name: Keçirilmiş istirahət günü}
+  - {date: 2026-05-11, name: Keçirilmiş istirahət günü}
+  - {date: 2026-05-29, name: Keçirilmiş istirahət günü}
+  - {date: 2026-11-10, name: Keçirilmiş istirahət günü}

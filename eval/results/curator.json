@@ -1,0 +1,440 @@
+{
+  "agent": "curator",
+  "model": "anthropic/claude-sonnet-5-5 effort=medium",
+  "n": 23,
+  "run_at": "2026-10-22T15:12:01+04:00",
+  "metrics": {
+    "accuracy": 1.0,
+    "false_proposal_rate": 0.0,
+    "coverage": 1.0,
+    "keyword_hit_rate": 1.0,
+    "pii_leaks": 0,
+    "by_label": {
+      "duplicate": {
+        "n": 4,
+        "accuracy": 1.0
+      },
+      "general": {
+        "n": 9,
+        "accuracy": 1.0
+      },
+      "individual": {
+        "n": 8,
+        "accuracy": 1.0
+      },
+      "pii": {
+        "n": 2,
+        "accuracy": 1.0
+      }
+    },
+    "errors": []
+  },
+  "latency_ms": {
+    "p50": 2798,
+    "p95": 4604
+  },
+  "rows": [
+    {
+      "case": {
+        "kind": "general",
+        "suitable": true,
+        "must": [
+          "bank"
+        ],
+        "any": [
+          "şəxsiyyət vəsiqəsi",
+          "şəxsiyyəti təsdiq"
+        ],
+        "subject": "Pensiya kartı itib",
+        "summary": "Pensiya kartım itib, pensiyanı ala bilmirəm",
+        "answer": "Hörmətli vətəndaş, pensiya kartı itdikdə kartı buraxmış bankın istənilən filialına şəxsiyyət vəsiqəsi ilə müraciət edərək kartı bloklatmalı və yeni kartın verilməsi üçün ərizə yazmalısınız. Pensiya hesabda qalır, yeni kart verildikdən sonra ödənişləri ala bilərsiniz."
+      },
+      "pred": {
+        "suitable": true,
+        "question": "Pensiya kartım itib, nə etməliyəm?",
+        "answer": "Pensiya kartı itdikdə kartı buraxmış bankın istənilən filialına şəxsiyyət vəsiqəsi ilə müraciət edərək kartı bloklatmalı və yeni kartın verilməsi üçün ərizə yazmalısınız. Pensiya hesabda qalır, yeni kart verildikdən sonra ödənişləri ala bilərsiniz."
+      },
+      "latency_ms": 26469
+    },
+    {
+      "case": {
+        "kind": "general",
+        "suitable": true,
+        "must": [
+          "etibarnamə"
+        ],
+        "any": [
+          "notarial",
+          "notarius"
+        ],
+        "subject": "Pensiyanı başqası ala bilərmi",
+        "summary": "Xəstə atamın pensiyasını mən ala bilərəmmi",
+        "answer": "Hörmətli vətəndaş, pensiyaçı səhhətinə görə ödənişi şəxsən ala bilmirsə, pensiya notarial qaydada təsdiq edilmiş etibarnamə əsasında etibar edilən şəxs tərəfindən bankdan alına bilər. Etibarnamədə pensiyanın alınması səlahiyyəti açıq göstərilməlidir."
+      },
+      "pred": {
+        "suitable": true,
+        "question": "Səhhətinə görə pensiyanı özü ala bilməyən şəxsin pensiyasını başqası ala bilərmi?",
+        "answer": "Pensiyaçı səhhətinə görə ödənişi şəxsən ala bilmirsə, pensiya notarial qaydada təsdiq edilmiş etibarnamə əsasında etibar edilən şəxs tərəfindən bankdan alına bilər. Etibarnamədə pensiyanın alınması səlahiyyəti açıq göstərilməlidir."
+      },
+      "latency_ms": 2988
+    },
+    {
+      "case": {
+        "kind": "general",
+        "suitable": true,
+        "must": [
+          "şəhadətnamə"
+        ],
+        "any": [
+          "dəfn",
+          "ölüm"
+        ],
+        "subject": "Dəfn üçün müavinət",
+        "summary": "Anam vəfat edib, dəfn üçün müavinət necə alınır",
+        "answer": "Hörmətli vətəndaş, dəfn üçün birdəfəlik müavinət almaq üçün ailə üzvü ölüm haqqında şəhadətnamə və şəxsiyyət vəsiqəsi ilə yaşayış yeri üzrə DSMF şöbəsinə və ya DOST mərkəzinə müraciət etməlidir. Müavinət müraciət tarixindən 10 iş günü ərzində ödənilir."
+      },
+      "pred": {
+        "suitable": true,
+        "question": "Dəfn üçün birdəfəlik müavinət necə alınır?",
+        "answer": "Dəfn üçün birdəfəlik müavinət almaq məqsədilə ailə üzvü ölüm haqqında şəhadətnamə və şəxsiyyət vəsiqəsi ilə yaşayış yeri üzrə DSMF şöbəsinə və ya DOST mərkəzinə müraciət etməlidir. Müavinət müraciət tarixindən 10 iş günü ərzində ödənilir."
+      },
+      "latency_ms": 4604
+    },
+    {
+      "case": {
+        "kind": "general",
+        "suitable": true,
+        "must": [
+          "doğum"
+        ],
+        "any": [
+          "e-sosial",
+          "DOST",
+          "avtomatik"
+        ],
+        "subject": "Uşağın doğulmasına görə müavinət",
+        "summary": "Uşağım doğulub, birdəfəlik müavinət necə alım",
+        "answer": "Hörmətli vətəndaş, uşağın doğulmasına görə birdəfəlik müavinət doğum qeydə alındıqdan sonra elektron sistem vasitəsilə avtomatik təyin olunur. Müavinət təyin edilməyibsə, doğum haqqında şəhadətnamə ilə DOST mərkəzinə müraciət edə bilərsiniz."
+      },
+      "pred": {
+        "suitable": true,
+        "question": "Uşağın doğulmasına görə birdəfəlik müavinəti necə ala bilərəm?",
+        "answer": "Uşağın doğulmasına görə birdəfəlik müavinət doğum qeydə alındıqdan sonra elektron sistem vasitəsilə avtomatik təyin olunur. Müavinət təyin edilməyibsə, doğum haqqında şəhadətnamə ilə DOST mərkəzinə müraciət etmək olar."
+      },
+      "latency_ms": 3087
+    },
+    {
+      "case": {
+        "kind": "general",
+        "suitable": true,
+        "must": [
+          "elektron"
+        ],
+        "any": [
+          "arayış",
+          "əmək müqaviləsi"
+        ],
+        "subject": "Əmək stajı haqqında arayış",
+        "summary": "Əmək kitabçam itib, stajımı necə sübut edim",
+        "answer": "Hörmətli vətəndaş, 2014-cü ildən sonrakı əmək stajı elektron əmək müqaviləsi informasiya sistemində saxlanılır və bu məlumatlar əsasında arayış almaq mümkündür. Daha əvvəlki dövr üçün işlədiyiniz müəssisədən və ya arxivdən arayış tələb etməlisiniz."
+      },
+      "pred": {
+        "suitable": true,
+        "question": "Əmək kitabçası itibsə, əmək stajını necə sübut etmək olar?",
+        "answer": "2014-cü ildən sonrakı əmək stajı elektron əmək müqaviləsi informasiya sistemində saxlanılır və bu məlumatlar əsasında arayış almaq mümkündür. Daha əvvəlki dövr üçün işlənilmiş müəssisədən və ya arxivdən arayış tələb etmək lazımdır."
+      },
+      "latency_ms": 3525
+    },
+    {
+      "case": {
+        "kind": "general",
+        "suitable": true,
+        "must": [
+          "işsiz"
+        ],
+        "any": [
+          "qeydiyyat",
+          "sığorta"
+        ],
+        "subject": "İşsizlik sığortası",
+        "summary": "İşdən çıxmışam, işsizlik sığortası necə alınır",
+        "answer": "Hörmətli vətəndaş, işsizlik sığortası ödənişi almaq üçün işdən azad olunduqdan sonra Dövlət Məşğulluq Agentliyində işsiz kimi qeydiyyata alınmalısınız. Sığorta stajınız tələb olunan müddətdən azdırsa, ödəniş təyin edilmir."
+      },
+      "pred": {
+        "suitable": true,
+        "question": "İşdən çıxmışam, işsizlik sığortası ödənişini necə ala bilərəm?",
+        "answer": "İşsizlik sığortası ödənişi almaq üçün işdən azad olunduqdan sonra Dövlət Məşğulluq Agentliyində işsiz kimi qeydiyyata alınmaq lazımdır. Sığorta stajı tələb olunan müddətdən azdırsa, ödəniş təyin edilmir."
+      },
+      "latency_ms": 2798
+    },
+    {
+      "case": {
+        "kind": "general",
+        "suitable": true,
+        "must": [
+          "tərkib"
+        ],
+        "any": [
+          "bildir",
+          "məlumat ver"
+        ],
+        "subject": "ÜDSY alarkən ailə tərkibi dəyişib",
+        "summary": "Sosial yardım alıram, oğlum işə düzəlib, nə etməliyəm",
+        "answer": "Hörmətli vətəndaş, ünvanlı dövlət sosial yardım alan ailənin tərkibində və ya gəlirində dəyişiklik olduqda bu barədə Sosial Xidmətlər Agentliyinə məlumat verməlisiniz. Dəyişiklik bildirilmədikdə artıq ödənilmiş yardım geri tələb oluna bilər."
+      },
+      "pred": {
+        "suitable": true,
+        "question": "Ünvanlı dövlət sosial yardım alan ailənin tərkibi və ya gəliri dəyişərsə nə etmək lazımdır?",
+        "answer": "Ünvanlı dövlət sosial yardım alan ailənin tərkibində və ya gəlirində dəyişiklik olduqda bu barədə Sosial Xidmətlər Agentliyinə məlumat verilməlidir. Dəyişiklik bildirilmədikdə artıq ödənilmiş yardım geri tələb oluna bilər."
+      },
+      "latency_ms": 2558
+    },
+    {
+      "case": {
+        "kind": "general",
+        "suitable": true,
+        "must": [
+          "bank"
+        ],
+        "any": [
+          "PİN",
+          "pin"
+        ],
+        "lang": "ru",
+        "subject": "Забыл PIN-код пенсионной карты",
+        "summary": "Забыл PIN-код пенсионной карты, что делать",
+        "answer": "Hörmətli vətəndaş, pensiya kartının PİN kodunu unutduqda kartı buraxmış bankın filialına şəxsiyyət vəsiqəsi ilə müraciət edib yeni PİN kodun verilməsini xahiş etməlisiniz. Bu xidmət bank tərəfindən göstərilir."
+      },
+      "pred": {
+        "suitable": true,
+        "question": "Pensiya kartının PİN kodunu unutmuşam, nə etməliyəm?",
+        "answer": "Pensiya kartının PİN kodunu unutduqda kartı buraxmış bankın filialına şəxsiyyət vəsiqəsi ilə müraciət edib yeni PİN kodun verilməsini xahiş etməlisiniz. Bu xidmət bank tərəfindən göstərilir."
+      },
+      "latency_ms": 2853
+    },
+    {
+      "case": {
+        "kind": "pii",
+        "suitable": true,
+        "must": [
+          "bank"
+        ],
+        "any": [
+          "blok",
+          "qaynar xətt"
+        ],
+        "subject": "Pensiya kartı bloklanıb",
+        "summary": "Əli Məmmədov: kartım bloklanıb, pensiyanı çıxara bilmirəm",
+        "answer": "Hörmətli Əli Məmmədov, kart üç dəfə səhv PİN daxil edildikdə avtomatik bloklanır. Kartı açdırmaq üçün bankın qaynar xəttinə zəng etməli və ya filiala şəxsiyyət vəsiqəsi ilə müraciət etməlisiniz. Əlavə sualınız olarsa, əməkdaşımız sizinlə +994501234567 nömrəsi ilə əlaqə saxlayacaq."
+      },
+      "pred": {
+        "suitable": true,
+        "question": "Pensiya kartım bloklanıb, pensiyanı çıxara bilmirəm. Nə etməliyəm?",
+        "answer": "Kart üç dəfə səhv PİN daxil edildikdə avtomatik bloklanır. Kartı açdırmaq üçün bankın qaynar xəttinə zəng etməli və ya filiala şəxsiyyət vəsiqəsi ilə müraciət etməlisiniz."
+      },
+      "latency_ms": 2913
+    },
+    {
+      "case": {
+        "kind": "pii",
+        "suitable": true,
+        "must": [
+          "arayış"
+        ],
+        "any": [
+          "DOST",
+          "elektron",
+          "e-gov"
+        ],
+        "subject": "Pensiya məbləği haqqında arayış",
+        "summary": "Əli müəllim bankdan kredit üçün pensiya arayışı istəyir",
+        "answer": "Hörmətli Əli Məmmədov, pensiyanın məbləği haqqında arayışı elektron hökumət portalı vasitəsilə onlayn və ya DOST mərkəzlərində dərhal əldə edə bilərsiniz. Arayış banklar tərəfindən qəbul edilir."
+      },
+      "pred": {
+        "suitable": true,
+        "question": "Pensiyanın məbləği haqqında arayışı harada əldə etmək olar?",
+        "answer": "Pensiyanın məbləği haqqında arayışı elektron hökumət portalı vasitəsilə onlayn və ya DOST mərkəzlərində dərhal əldə etmək mümkündür. Bu arayış banklar tərəfindən qəbul edilir."
+      },
+      "latency_ms": 2802
+    },
+    {
+      "case": {
+        "kind": "individual",
+        "suitable": false,
+        "subject": "Pensiya köçmür",
+        "summary": "Pensiya 3 aydır köçmür",
+        "answer": "Hörmətli Əli Məmmədov, müraciətiniz araşdırılmışdır. Bankın texniki xətası səbəbindən dayandırılmış pensiya ödənişləriniz bərpa edilmiş, 3 aylıq borc 24.10.2026 tarixində hesabınıza köçürülmüşdür."
+      },
+      "pred": {
+        "suitable": false
+      },
+      "latency_ms": 3624
+    },
+    {
+      "case": {
+        "kind": "individual",
+        "suitable": false,
+        "subject": "ÜDSY gecikir",
+        "summary": "Ünvanlı sosial yardım müraciətinə cavab gecikir",
+        "answer": "Hörmətli vətəndaş, ünvanlı dövlət sosial yardım müraciətinizə baxılmış, ailənizə 01.11.2026 tarixindən aylıq 180 manat məbləğində sosial yardım təyin edilmişdir."
+      },
+      "pred": {
+        "suitable": false
+      },
+      "latency_ms": 2725
+    },
+    {
+      "case": {
+        "kind": "individual",
+        "suitable": false,
+        "subject": "Əlillik qiymətləndirməsi",
+        "summary": "Əlillik qiymətləndirməsinin vaxtını soruşur",
+        "answer": "Hörmətli vətəndaş, sizin tibbi-sosial ekspertiza qiymətləndirməniz 15.11.2026 tarixində saat 11:00-da Binəqədi rayon şöbəsində aparılacaqdır. Özünüzlə şəxsiyyət vəsiqənizi gətirin."
+      },
+      "pred": {
+        "suitable": false
+      },
+      "latency_ms": 2226
+    },
+    {
+      "case": {
+        "kind": "individual",
+        "suitable": false,
+        "subject": "Əmək haqqı ödənilmir",
+        "summary": "İşəgötürən 2 aydır maaş vermir",
+        "answer": "Hörmətli vətəndaş, müraciətiniz əsasında işəgötürən müəssisədə Dövlət Əmək Müfəttişliyi Xidməti tərəfindən yoxlama aparılmış, əmək haqqı borcunuz 20.10.2026 tarixində tam ödənilmişdir."
+      },
+      "pred": {
+        "suitable": false
+      },
+      "latency_ms": 3550
+    },
+    {
+      "case": {
+        "kind": "individual",
+        "suitable": false,
+        "subject": "Sənədlər",
+        "summary": "Sənədlərimin vəziyyətini soruşur",
+        "answer": "Hörmətli vətəndaş, təqdim etdiyiniz sənədlər hazırda yoxlanılır. Yoxlamanın nəticəsi barədə sizə əlavə məlumat veriləcəkdir."
+      },
+      "pred": {
+        "suitable": false
+      },
+      "latency_ms": 1890
+    },
+    {
+      "case": {
+        "kind": "individual",
+        "suitable": false,
+        "subject": "Mənzil növbəsi",
+        "summary": "Sosial mənzil növbəsində neçənci olduğunu soruşur",
+        "answer": "Hörmətli vətəndaş, ailəniz sosial mənzil təminatı üzrə növbədə 1247-ci sıradadır. Növbəniz çatdıqda sizinlə əlaqə saxlanılacaq."
+      },
+      "pred": {
+        "suitable": false
+      },
+      "latency_ms": 2108
+    },
+    {
+      "case": {
+        "kind": "individual",
+        "suitable": false,
+        "subject": "Müavinət dayandırılıb",
+        "summary": "Əlillik müavinəti dayandırılıb",
+        "answer": "Hörmətli Əli Məmmədov, əlillik müddətinizin 01.10.2026 tarixində bitməsi səbəbindən müavinətin ödənilməsi dayandırılmışdır. Təkrar qiymətləndirmədən keçdikdən sonra ödəniş bərpa olunacaq."
+      },
+      "pred": {
+        "suitable": false
+      },
+      "latency_ms": 3151
+    },
+    {
+      "case": {
+        "kind": "duplicate",
+        "suitable": false,
+        "subject": "Müraciətə baxılma müddəti",
+        "summary": "Müraciətimə neçə günə baxılacaq",
+        "answer": "Hörmətli vətəndaş, müraciətə qeydiyyata alındığı gündən 15 iş günü ərzində baxılır. Əlavə yoxlama tələb olunduqda bu müddət 30 iş gününədək uzadıla bilər."
+      },
+      "pred": {
+        "suitable": false
+      },
+      "latency_ms": 2631
+    },
+    {
+      "case": {
+        "kind": "duplicate",
+        "suitable": false,
+        "subject": "Qaynar xətt",
+        "summary": "Nazirliyin qaynar xəttini soruşur",
+        "answer": "Hörmətli vətəndaş, suallarınızla bağlı \"142\" Çağrı mərkəzi ilə əlaqə saxlaya bilərsiniz."
+      },
+      "pred": {
+        "suitable": false
+      },
+      "latency_ms": 1678
+    },
+    {
+      "case": {
+        "kind": "duplicate",
+        "suitable": false,
+        "subject": "Əlilliyə müraciət",
+        "summary": "Əlilliyə necə müraciət etməli",
+        "answer": "Hörmətli vətəndaş, əlilliyin qiymətləndirilməsi üçün qeydiyyatda olduğunuz ərazi üzrə tibb müəssisəsinə müraciət edərək forma-88 sənədini rəsmiləşdirməlisiniz. Forma-88 göndərişi elektron sistemə daxil edildikdən sonra qiymətləndirmə aparılacaq."
+      },
+      "pred": {
+        "suitable": false
+      },
+      "latency_ms": 2625
+    },
+    {
+      "case": {
+        "kind": "duplicate",
+        "suitable": false,
+        "subject": "Pensiya nə vaxt köçürülür",
+        "summary": "Pensiyanın köçürülmə tarixini soruşur",
+        "answer": "Hörmətli vətəndaş, sosial müavinət, təqaüd və pensiya ödənişləri hər ayın sonunadək təmin edilir. Qrafikdə dəyişiklik olarsa, əvvəlcədən məlumat veriləcək."
+      },
+      "pred": {
+        "suitable": false
+      },
+      "latency_ms": 2749
+    },
+    {
+      "case": {
+        "kind": "individual",
+        "suitable": false,
+        "subject": "Aidiyyəti üzrə",
+        "summary": "Kommunal borc barədə şikayət",
+        "answer": "Hörmətli vətəndaş, müraciətiniz aidiyyəti üzrə Azərişıq ASC-yə göndərilmişdir. Cavab həmin qurum tərəfindən veriləcək."
+      },
+      "pred": {
+        "suitable": false
+      },
+      "latency_ms": 2058
+    },
+    {
+      "case": {
+        "kind": "general",
+        "suitable": true,
+        "must": [
+          "sığorta"
+        ],
+        "any": [
+          "arayış",
+          "elektron"
+        ],
+        "lang": "translit",
+        "subject": "Sigorta staji",
+        "summary": "sigorta stajimi nece oyrene bilerem",
+        "answer": "Hörmətli vətəndaş, sığorta stajınız və fərdi hesabınızdakı ödənişlər barədə məlumatı elektron hökumət portalında DSMF-nin elektron xidməti vasitəsilə onlayn əldə edə bilərsiniz. Rəsmi arayış lazım olduqda DOST mərkəzinə müraciət edə bilərsiniz."
+      },
+      "pred": {
+        "suitable": true,
+        "question": "Sığorta stajımı necə öyrənə bilərəm?",
+        "answer": "Sığorta stajı və fərdi hesabdakı ödənişlər barədə məlumatı elektron hökumət portalında DSMF-nin elektron xidməti vasitəsilə onlayn əldə etmək olar. Rəsmi arayış lazım olduqda DOST mərkəzinə müraciət etmək mümkündür."
+      },
+      "latency_ms": 2669
+    }
+  ]
+}

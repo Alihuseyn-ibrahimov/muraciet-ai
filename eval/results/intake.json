@@ -1,0 +1,607 @@
+{
+  "agent": "intake",
+  "model": "anthropic/claude-sonnet-5-5 effort=low",
+  "n": 22,
+  "run_at": "2026-10-22T11:58:55+04:00",
+  "metrics": {
+    "complete_accuracy": 1.0,
+    "keep_rate": 1.0,
+    "personal_data_questions": 0,
+    "forbidden_questions": 0,
+    "failures": 0,
+    "by_lang": {
+      "az": {
+        "n": 19,
+        "accuracy": 1.0
+      },
+      "ru": {
+        "n": 2,
+        "accuracy": 1.0
+      },
+      "translit": {
+        "n": 1,
+        "accuracy": 1.0
+      }
+    },
+    "errors": []
+  },
+  "latency_ms": {
+    "p50": 2176,
+    "p95": 3951
+  },
+  "rows": [
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Əlillik dərəcəm səbəbsiz yerə kəsilib, narazıyam"
+          ]
+        ],
+        "complete": null,
+        "keep": [
+          [
+            "əlillik"
+          ]
+        ],
+        "forbid_question": [
+          "əmək haqqı",
+          "əməkhaqqı",
+          "təqaüd"
+        ],
+        "note": "real yoxlamadan (MR-2026-000003)"
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "əlillik dərəcəsinin səbəbsiz kəsilməsi",
+        "summary": "Vətəndaşın bildirdiyinə görə, onun əlillik dərəcəsi səbəbsiz yerə kəsilib. Vətəndaş bu vəziyyətdən narazıdır və məsələnin araşdırılmasını tələb edir."
+      },
+      "latency_ms": 5145
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "əlilklə bağlı müraciət edirəm"
+          ],
+          [
+            "bot",
+            "Zəhmət olmasa, problemin nədən ibarət olduğunu qısaca izah edin."
+          ],
+          [
+            "citizen",
+            "əlillik dərəcə səbəbsiz yerə kəsilib narazıyam"
+          ]
+        ],
+        "complete": null,
+        "keep": [
+          [
+            "əlillik"
+          ]
+        ],
+        "forbid_question": [
+          "əmək haqqı",
+          "əməkhaqqı",
+          "təqaüd"
+        ],
+        "note": "real yoxlamadan"
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "əlillik dərəcəsinin səbəbsiz kəsilməsi ilə bağlı narazılıq",
+        "summary": "Vətəndaş əlillik dərəcəsinin səbəbsiz yerə kəsildiyini bildirir və buna narazılığını ifadə edir. Qərarın yenidən araşdırılmasını tələb edir."
+      },
+      "latency_ms": 2266
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "əlilliklə bağlı müraciət edirəm"
+          ]
+        ],
+        "complete": false,
+        "keep": [],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": false,
+        "next_question": "əlilliklə bağlı konkret olaraq hansı problemlə üzləşmisiniz və nə istəyirsiniz?",
+        "subject": "",
+        "summary": ""
+      },
+      "latency_ms": 1851
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Pensiyam 3 aydır bank kartına köçmür, ödənişin bərpasını istəyirəm"
+          ]
+        ],
+        "complete": true,
+        "keep": [
+          [
+            "pensiya"
+          ],
+          [
+            "3 ay"
+          ]
+        ],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "Pensiyanın 3 aydır bank kartına köçürülməməsi",
+        "summary": "Vətəndaşın pensiyası 3 aydır bank kartına köçürülmür. Vətəndaş pensiya ödənişinin bərpasını tələb edir."
+      },
+      "latency_ms": 2270
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "ÜDSY müraciətimə imtina gəlib, səbəbini bilmirəm, yenidən baxılmasını istəyirəm"
+          ]
+        ],
+        "complete": true,
+        "keep": [
+          [
+            "imtina"
+          ]
+        ],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "ÜDSY müraciətinə imtina qərarına yenidən baxılması",
+        "summary": "Vətəndaşın ÜDSY müraciətinə imtina cavabı gəlib, imtinanın səbəbini bilmir. Qərara yenidən baxılmasını istəyir."
+      },
+      "latency_ms": 1614
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "İşəgötürən 2 aydır maaşımı vermir"
+          ]
+        ],
+        "complete": null,
+        "keep": [
+          [
+            "maaş",
+            "əməkhaqqı",
+            "əmək haqqı"
+          ]
+        ],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "İşəgötürənin 2 aydır maaş verməməsi",
+        "summary": "Vətəndaş işəgötürənin 2 aydır əmək haqqını ödəmədiyini bildirir. Maaşın ödənilməsi üçün tədbir görülməsini tələb edir."
+      },
+      "latency_ms": 2012
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Kömək lazımdır"
+          ]
+        ],
+        "complete": false,
+        "keep": [],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": false,
+        "next_question": "Hansı məsələ ilə bağlı kömək lazımdır?",
+        "subject": "",
+        "summary": ""
+      },
+      "latency_ms": 2239
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Müavinətim kəsilib"
+          ]
+        ],
+        "complete": false,
+        "keep": [],
+        "forbid_question": [
+          "əmək haqqı",
+          "əməkhaqqı"
+        ]
+      },
+      "pred": {
+        "complete": false,
+        "next_question": "Hansı müavinətiniz kəsilib?",
+        "subject": "Müavinətin kəsilməsi",
+        "summary": "Vətəndaş müavinətinin kəsildiyini bildirir, lakin müavinətin növü bəlli deyil."
+      },
+      "latency_ms": 1698
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Мне перестали платить пособие по инвалидности с августа"
+          ]
+        ],
+        "complete": true,
+        "keep": [
+          [
+            "əlillik"
+          ],
+          [
+            "avqust"
+          ]
+        ],
+        "forbid_question": [],
+        "lang": "ru"
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "Əlillik müavinətinin avqust ayından ödənilməməsi",
+        "summary": "Vətəndaşa ödənilən əlillik müavinəti avqust ayından etibarən dayandırılıb (ödənilmir). Vətəndaş müavinətin ödənilməsinin bərpa olunmasını və səbəbin aydınlaşdırılmasını istəyir."
+      },
+      "latency_ms": 2465
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "pensiyam kesilib 2 aydir, sebebi aydin deyil, berpa olunmasini isteyirem"
+          ]
+        ],
+        "complete": true,
+        "keep": [
+          [
+            "pensiya"
+          ]
+        ],
+        "forbid_question": [],
+        "lang": "translit"
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "Pensiyanın 2 aydır kəsilməsi və bərpa tələbi",
+        "summary": "Vətəndaşın pensiyası 2 aydır kəsilib, səbəb ona məlum deyil. Pensiyanın bərpa olunmasını tələb edir."
+      },
+      "latency_ms": 2113
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Şəhid ailəsiyik, 5 ildir mənzil növbəsindəyik, növbəmiz irəliləmir"
+          ]
+        ],
+        "complete": true,
+        "keep": [
+          [
+            "şəhid"
+          ],
+          [
+            "növbə"
+          ]
+        ],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "Şəhid ailəsi üçün mənzil növbəsinin irəliləməməsi",
+        "summary": "Şəhid ailəsi olan vətəndaş 5 ildir mənzil növbəsində olduğunu və növbənin irəliləmədiyini bildirir. Növbənin araşdırılmasını və mənzillə təminat məsələsinin həllini tələb edir."
+      },
+      "latency_ms": 2090
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Evdə yataq xəstəsi olan yaşlı anam var, ona baxmaq üçün sosial işçi lazımdır"
+          ]
+        ],
+        "complete": true,
+        "keep": [
+          [
+            "yataq"
+          ],
+          [
+            "sosial işçi",
+            "sosial xidmət"
+          ]
+        ],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "Yataq xəstəsi olan yaşlı anaya baxmaq üçün sosial işçi tələbi",
+        "summary": "Vətəndaşın evdə yataq xəstəsi olan yaşlı anası var. Ona baxmaq üçün sosial işçi təyin edilməsini tələb edir."
+      },
+      "latency_ms": 1965
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "əlillik dərəcəm kəsilib"
+          ],
+          [
+            "bot",
+            "Bu qərar barədə nə vaxt məlumat aldınız?"
+          ],
+          [
+            "citizen",
+            "keçən ay, səbəb yazılmayıb"
+          ]
+        ],
+        "complete": true,
+        "keep": [
+          [
+            "əlillik"
+          ],
+          [
+            "keçən ay",
+            "ötən ay",
+            "bir ay"
+          ]
+        ],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "əlillik dərəcəsinin kəsilməsi",
+        "summary": "Vətəndaşın əlillik dərəcəsi kəsilib, bu barədə keçən ay məlumat alıb, qərarda səbəb göstərilməyib. Vətəndaş vəziyyətin araşdırılmasını istəyir."
+      },
+      "latency_ms": 3951
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Forma-88 göndərişi sistemə düşmür, ekspertizaya gedə bilmirəm"
+          ]
+        ],
+        "complete": true,
+        "keep": [
+          [
+            "forma-88"
+          ]
+        ],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "Forma-88 göndərişi sistemə düşmür, ekspertizaya getmək mümkün deyil",
+        "summary": "Vətəndaşın bildirdiyinə görə, forma-88 göndərişi sistemə düşmür və buna görə ekspertizaya gedə bilmir. Göndərişin sistemə düşməsi və ekspertizadan keçmək imkanının təmin edilməsi tələb olunur."
+      },
+      "latency_ms": 2848
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Birdəfəlik maddi yardım üçün müraciət etmişəm, 3 aydır cavab yoxdur"
+          ]
+        ],
+        "complete": true,
+        "keep": [
+          [
+            "birdəfəlik"
+          ],
+          [
+            "3 ay"
+          ]
+        ],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "Birdəfəlik maddi yardım müraciətinə cavab verilməməsi",
+        "summary": "Vətəndaş birdəfəlik maddi yardım üçün müraciət edib, lakin 3 aydır cavab almayıb. Müraciətinin araşdırılmasını və cavab verilməsini tələb edir."
+      },
+      "latency_ms": 2744
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "sosial yardımla bağlı problem var"
+          ]
+        ],
+        "complete": false,
+        "keep": [],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": false,
+        "next_question": "Sosial yardımla bağlı problem konkret olaraq nədən ibarətdir?",
+        "subject": "",
+        "summary": ""
+      },
+      "latency_ms": 1509
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "İşdən qanunsuz çıxarılmışam, əmək müqaviləm ləğv edilib"
+          ]
+        ],
+        "complete": null,
+        "keep": [
+          [
+            "işdən"
+          ]
+        ],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "Qanunsuz işdən çıxarılma və əmək müqaviləsinin ləğvi",
+        "summary": "Vətəndaş işdən qanunsuz çıxarıldığını və əmək müqaviləsinin ləğv edildiyini bildirir. Vəziyyətin araşdırılmasını və hüquqlarının bərpasını tələb edir."
+      },
+      "latency_ms": 1984
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Mən [AD_1] [SOYAD_1], pensiyam 2 aydır köçmür"
+          ]
+        ],
+        "complete": true,
+        "keep": [
+          [
+            "pensiya"
+          ]
+        ],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "Pensiyanın 2 aydır köçürülməməsi",
+        "summary": "Vətəndaş pensiyasının 2 aydır köçürülmədiyini bildirir. Pensiyanın ödənilməsinin bərpa olunmasını və problemin araşdırılmasını tələb edir."
+      },
+      "latency_ms": 2454
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Qızımın əlillik müavinəti avqustdan dayandırılıb, bərpasını xahiş edirəm"
+          ]
+        ],
+        "complete": true,
+        "keep": [
+          [
+            "əlillik"
+          ],
+          [
+            "avqust"
+          ]
+        ],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "Qızın əlillik müavinətinin dayandırılması və bərpası",
+        "summary": "Vətəndaşın qızının əlillik müavinəti avqust ayından dayandırılıb. Vətəndaş müavinətin bərpasını xahiş edir."
+      },
+      "latency_ms": 2300
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Ərizəm rədd edilib"
+          ]
+        ],
+        "complete": false,
+        "keep": [],
+        "forbid_question": []
+      },
+      "pred": {
+        "complete": false,
+        "next_question": "Hansı ərizəniz rədd edilib?",
+        "subject": "",
+        "summary": ""
+      },
+      "latency_ms": 1459
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "uşaq pulu kəsilib"
+          ]
+        ],
+        "complete": null,
+        "keep": [
+          [
+            "uşaq"
+          ]
+        ],
+        "forbid_question": [
+          "əmək haqqı",
+          "əməkhaqqı"
+        ]
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "Uşaq pulunun kəsilməsi",
+        "summary": "Vətəndaş uşaq pulunun kəsildiyini bildirir. Ödənişin bərpa olunmasını və kəsilmə səbəbinin araşdırılmasını tələb edir."
+      },
+      "latency_ms": 2397
+    },
+    {
+      "case": {
+        "dialogue": [
+          [
+            "citizen",
+            "Пенсия не поступает уже два месяца"
+          ]
+        ],
+        "complete": true,
+        "keep": [
+          [
+            "pensiya"
+          ],
+          [
+            "2 ay",
+            "iki ay"
+          ]
+        ],
+        "forbid_question": [],
+        "lang": "ru"
+      },
+      "pred": {
+        "complete": true,
+        "next_question": null,
+        "subject": "Pensiyanın iki aydır ödənilməməsi",
+        "summary": "Vətəndaş pensiyasının iki aydır hesaba daxil olmadığını bildirir. Pensiyanın ödənilməsinin bərpa edilməsini və səbəbin araşdırılmasını tələb edir."
+      },
+      "latency_ms": 1784
+    }
+  ]
+}

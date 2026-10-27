@@ -1,0 +1,340 @@
+{
+  "agent": "routing",
+  "model": "anthropic/claude-haiku-5-5 effort=low",
+  "n": 23,
+  "run_at": "2026-10-21T19:16:22+04:00",
+  "metrics": {
+    "accuracy": 1.0,
+    "failures": 0,
+    "by_label": {
+      "elillik": {
+        "n": 3,
+        "accuracy": 1.0
+      },
+      "emek": {
+        "n": 3,
+        "accuracy": 1.0
+      },
+      "general": {
+        "n": 2,
+        "accuracy": 1.0
+      },
+      "huquq": {
+        "n": 2,
+        "accuracy": 1.0
+      },
+      "huquq/udsy": {
+        "n": 1,
+        "accuracy": 1.0
+      },
+      "menzil": {
+        "n": 2,
+        "accuracy": 1.0
+      },
+      "mesgulluq": {
+        "n": 2,
+        "accuracy": 1.0
+      },
+      "pensiya": {
+        "n": 3,
+        "accuracy": 1.0
+      },
+      "sosial_xidmet": {
+        "n": 2,
+        "accuracy": 1.0
+      },
+      "sosial_xidmet/udsy": {
+        "n": 1,
+        "accuracy": 1.0
+      },
+      "udsy": {
+        "n": 2,
+        "accuracy": 1.0
+      }
+    },
+    "by_lang": {
+      "az": {
+        "n": 19,
+        "accuracy": 1.0
+      },
+      "ru": {
+        "n": 2,
+        "accuracy": 1.0
+      },
+      "translit": {
+        "n": 2,
+        "accuracy": 1.0
+      }
+    },
+    "errors": []
+  },
+  "latency_ms": {
+    "p50": 1513,
+    "p95": 1850
+  },
+  "rows": [
+    {
+      "case": {
+        "subject": "Pensiya köçmür",
+        "summary": "Pensiyam 3 aydır köçmür.",
+        "department": "pensiya"
+      },
+      "pred": {
+        "department": "pensiya"
+      },
+      "latency_ms": 1627
+    },
+    {
+      "case": {
+        "subject": "Müavinət",
+        "summary": "Sosial müavinətimin məbləği səhv hesablanıb.",
+        "department": "pensiya"
+      },
+      "pred": {
+        "department": "pensiya"
+      },
+      "latency_ms": 1426
+    },
+    {
+      "case": {
+        "subject": "Пенсия",
+        "summary": "Не пришла пенсия за этот месяц.",
+        "department": "pensiya",
+        "lang": "ru"
+      },
+      "pred": {
+        "department": "pensiya"
+      },
+      "latency_ms": 1165
+    },
+    {
+      "case": {
+        "subject": "ÜDSY",
+        "summary": "Ünvanlı sosial yardım üçün müraciətim 2 aydır cavabsız qalıb.",
+        "department": "udsy"
+      },
+      "pred": {
+        "department": "udsy"
+      },
+      "latency_ms": 1133
+    },
+    {
+      "case": {
+        "subject": "ÜDSY ödənişi",
+        "summary": "udsy odenisi gecikir",
+        "department": "udsy",
+        "lang": "translit"
+      },
+      "pred": {
+        "department": "udsy"
+      },
+      "latency_ms": 2014
+    },
+    {
+      "case": {
+        "subject": "ÜDSY imtinası",
+        "summary": "Ünvanlı sosial yardım ərizəmə verilən imtina qərarından şikayət edirəm.",
+        "department": [
+          "udsy",
+          "huquq"
+        ]
+      },
+      "pred": {
+        "department": "udsy"
+      },
+      "latency_ms": 1323
+    },
+    {
+      "case": {
+        "subject": "Təkrar qiymətləndirmə",
+        "summary": "Əlilliyimin təkrar qiymətləndirilməsini xahiş edirəm.",
+        "department": "elillik"
+      },
+      "pred": {
+        "department": "elillik"
+      },
+      "latency_ms": 1565
+    },
+    {
+      "case": {
+        "subject": "Forma-88",
+        "summary": "Poliklinika forma-88 göndərişini sistemə daxil etsə də, ekspertiza aparılmır.",
+        "department": "elillik"
+      },
+      "pred": {
+        "department": "elillik"
+      },
+      "latency_ms": 1353
+    },
+    {
+      "case": {
+        "subject": "Инвалидность",
+        "summary": "Как пройти повторную экспертизу инвалидности?",
+        "department": "elillik",
+        "lang": "ru"
+      },
+      "pred": {
+        "department": "elillik"
+      },
+      "latency_ms": 1513
+    },
+    {
+      "case": {
+        "subject": "İşsizlik",
+        "summary": "İşsizəm, işaxtaran kimi qeydiyyata alınmaq istəyirəm.",
+        "department": "mesgulluq"
+      },
+      "pred": {
+        "department": "mesgulluq"
+      },
+      "latency_ms": 1850
+    },
+    {
+      "case": {
+        "subject": "Sığorta ödənişi",
+        "summary": "İşsizlikdən sığorta ödənişi mənə təyin olunmayıb.",
+        "department": "mesgulluq"
+      },
+      "pred": {
+        "department": "mesgulluq"
+      },
+      "latency_ms": 1257
+    },
+    {
+      "case": {
+        "subject": "Yaşlı qonşu",
+        "summary": "Tənha yaşlı qonşuma sosial xidmət göstərilməsini xahiş edirəm.",
+        "department": "sosial_xidmet"
+      },
+      "pred": {
+        "department": "sosial_xidmet"
+      },
+      "latency_ms": 1209
+    },
+    {
+      "case": {
+        "subject": "Birdəfəlik yardım",
+        "summary": "Əlilliyi olan şəxs kimi birdəfəlik maddi yardım almaq istəyirəm.",
+        "department": "sosial_xidmet"
+      },
+      "pred": {
+        "department": "sosial_xidmet"
+      },
+      "latency_ms": 1327
+    },
+    {
+      "case": {
+        "subject": "Çoxuşaqlı ailə",
+        "summary": "Çoxuşaqlı aztəminatlı ailəyik, maddi köməyə ehtiyacımız var.",
+        "department": [
+          "sosial_xidmet",
+          "udsy"
+        ]
+      },
+      "pred": {
+        "department": "sosial_xidmet"
+      },
+      "latency_ms": 1570
+    },
+    {
+      "case": {
+        "subject": "Mənzil növbəsi",
+        "summary": "Şəhid ailəsiyik, mənzil növbəsində 5 ildir gözləyirik.",
+        "department": "menzil"
+      },
+      "pred": {
+        "department": "menzil"
+      },
+      "latency_ms": 1668
+    },
+    {
+      "case": {
+        "subject": "Fərdi ev",
+        "summary": "Müharibə ilə əlaqədar əlilliyi olan şəxs kimi fərdi evlə təmin olunmaq istəyirəm.",
+        "department": "menzil"
+      },
+      "pred": {
+        "department": "menzil"
+      },
+      "latency_ms": 1408
+    },
+    {
+      "case": {
+        "subject": "Əməkhaqqı",
+        "summary": "İşəgötürən 2 aydır əməkhaqqımı vermir.",
+        "department": "emek"
+      },
+      "pred": {
+        "department": "emek"
+      },
+      "latency_ms": 1536
+    },
+    {
+      "case": {
+        "subject": "İşdən çıxarılma",
+        "summary": "İşdən qanunsuz azad edilmişəm.",
+        "department": "emek"
+      },
+      "pred": {
+        "department": "emek"
+      },
+      "latency_ms": 1780
+    },
+    {
+      "case": {
+        "subject": "Əmək müqaviləsi",
+        "summary": "isegoturen emek muqavilesi baglamir",
+        "department": "emek",
+        "lang": "translit"
+      },
+      "pred": {
+        "department": "emek"
+      },
+      "latency_ms": 1570
+    },
+    {
+      "case": {
+        "subject": "Hüquqi izahat",
+        "summary": "Nazirliyin mənimlə bağlı qərarının hüquqi əsasını izah etməyinizi xahiş edirəm.",
+        "department": "huquq"
+      },
+      "pred": {
+        "department": "huquq"
+      },
+      "latency_ms": 1254
+    },
+    {
+      "case": {
+        "subject": "Arayışdan imtina",
+        "summary": "Mənə arayış verilməsindən imtina edildi, bunu əsassız hesab edirəm.",
+        "department": "huquq"
+      },
+      "pred": {
+        "department": "huquq"
+      },
+      "latency_ms": 1742
+    },
+    {
+      "case": {
+        "subject": "Virtual köməkçi",
+        "summary": "Virtual köməkçinin işinə dair təklifim var.",
+        "department": "general"
+      },
+      "pred": {
+        "department": "general"
+      },
+      "latency_ms": 1226
+    },
+    {
+      "case": {
+        "subject": "Növbə",
+        "summary": "Qəbul mərkəzində növbə çox uzun olur.",
+        "department": "general"
+      },
+      "pred": {
+        "department": "general"
+      },
+      "latency_ms": 1822
+    }
+  ]
+}

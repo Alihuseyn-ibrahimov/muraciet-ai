@@ -1,0 +1,22 @@
+{"dialogue": [["citizen", "Əlillik dərəcəm səbəbsiz yerə kəsilib, narazıyam"]], "complete": null, "keep": [["əlillik"]], "forbid_question": ["əmək haqqı", "əməkhaqqı", "təqaüd"], "note": "real yoxlamadan (MR-2026-000003)"}
+{"dialogue": [["citizen", "əlilklə bağlı müraciət edirəm"], ["bot", "Zəhmət olmasa, problemin nədən ibarət olduğunu qısaca izah edin."], ["citizen", "əlillik dərəcə səbəbsiz yerə kəsilib narazıyam"]], "complete": null, "keep": [["əlillik"]], "forbid_question": ["əmək haqqı", "əməkhaqqı", "təqaüd"], "note": "real yoxlamadan"}
+{"dialogue": [["citizen", "əlilliklə bağlı müraciət edirəm"]], "complete": false, "keep": [], "forbid_question": []}
+{"dialogue": [["citizen", "Pensiyam 3 aydır bank kartına köçmür, ödənişin bərpasını istəyirəm"]], "complete": true, "keep": [["pensiya"], ["3 ay"]], "forbid_question": []}
+{"dialogue": [["citizen", "ÜDSY müraciətimə imtina gəlib, səbəbini bilmirəm, yenidən baxılmasını istəyirəm"]], "complete": true, "keep": [["imtina"]], "forbid_question": []}
+{"dialogue": [["citizen", "İşəgötürən 2 aydır maaşımı vermir"]], "complete": null, "keep": [["maaş", "əməkhaqqı", "əmək haqqı"]], "forbid_question": []}
+{"dialogue": [["citizen", "Kömək lazımdır"]], "complete": false, "keep": [], "forbid_question": []}
+{"dialogue": [["citizen", "Müavinətim kəsilib"]], "complete": false, "keep": [], "forbid_question": ["əmək haqqı", "əməkhaqqı"]}
+{"dialogue": [["citizen", "Мне перестали платить пособие по инвалидности с августа"]], "complete": true, "keep": [["əlillik"], ["avqust"]], "forbid_question": [], "lang": "ru"}
+{"dialogue": [["citizen", "pensiyam kesilib 2 aydir, sebebi aydin deyil, berpa olunmasini isteyirem"]], "complete": true, "keep": [["pensiya"]], "forbid_question": [], "lang": "translit"}
+{"dialogue": [["citizen", "Şəhid ailəsiyik, 5 ildir mənzil növbəsindəyik, növbəmiz irəliləmir"]], "complete": true, "keep": [["şəhid"], ["növbə"]], "forbid_question": []}
+{"dialogue": [["citizen", "Evdə yataq xəstəsi olan yaşlı anam var, ona baxmaq üçün sosial işçi lazımdır"]], "complete": true, "keep": [["yataq"], ["sosial işçi", "sosial xidmət"]], "forbid_question": []}
+{"dialogue": [["citizen", "əlillik dərəcəm kəsilib"], ["bot", "Bu qərar barədə nə vaxt məlumat aldınız?"], ["citizen", "keçən ay, səbəb yazılmayıb"]], "complete": true, "keep": [["əlillik"], ["keçən ay", "ötən ay", "bir ay"]], "forbid_question": []}
+{"dialogue": [["citizen", "Forma-88 göndərişi sistemə düşmür, ekspertizaya gedə bilmirəm"]], "complete": true, "keep": [["forma-88"]], "forbid_question": []}
+{"dialogue": [["citizen", "Birdəfəlik maddi yardım üçün müraciət etmişəm, 3 aydır cavab yoxdur"]], "complete": true, "keep": [["birdəfəlik"], ["3 ay"]], "forbid_question": []}
+{"dialogue": [["citizen", "sosial yardımla bağlı problem var"]], "complete": false, "keep": [], "forbid_question": []}
+{"dialogue": [["citizen", "İşdən qanunsuz çıxarılmışam, əmək müqaviləm ləğv edilib"]], "complete": null, "keep": [["işdən"]], "forbid_question": []}
+{"dialogue": [["citizen", "Mən [AD_1] [SOYAD_1], pensiyam 2 aydır köçmür"]], "complete": true, "keep": [["pensiya"]], "forbid_question": []}
+{"dialogue": [["citizen", "Qızımın əlillik müavinəti avqustdan dayandırılıb, bərpasını xahiş edirəm"]], "complete": true, "keep": [["əlillik"], ["avqust"]], "forbid_question": []}
+{"dialogue": [["citizen", "Ərizəm rədd edilib"]], "complete": false, "keep": [], "forbid_question": []}
+{"dialogue": [["citizen", "uşaq pulu kəsilib"]], "complete": null, "keep": [["uşaq"]], "forbid_question": ["əmək haqqı", "əməkhaqqı"]}
+{"dialogue": [["citizen", "Пенсия не поступает уже два месяца"]], "complete": true, "keep": [["pensiya"], ["2 ay", "iki ay"]], "forbid_question": [], "lang": "ru"}

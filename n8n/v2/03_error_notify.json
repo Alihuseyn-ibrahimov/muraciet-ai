@@ -1,0 +1,139 @@
+{
+  "id": "muracErrorNotif1",
+  "name": "Müraciət: xəta bildirişi",
+  "active": false,
+  "nodes": [
+    {
+      "id": "err-t",
+      "name": "Xəta",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "Xətanın mətni-c",
+      "name": "Xətanın mətni",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "jsCode": "// Xəta mətnində şəxsi məlumat olmur: n8n yalnız API-ni və v_daily_stats-ı görür\nconst e = $input.first().json;\n// Eyni workflow üzrə saatda ən çoxu bir bildiriş: API düşəndə hər 5 dəqiqədən bir mesaj getməsin\nconst seen = $getWorkflowStaticData('global');\nconst key = e.workflow?.name ?? '—';\nconst now = Date.now();\nif (e.execution?.id !== 'test' && seen[key] && now - seen[key] < 60 * 60 * 1000) return [];\nseen[key] = now;\nconst message = String(e.execution?.error?.message ?? 'naməlum xəta').slice(0, 500);\nconst text = [\n  '⚠️ n8n xətası',\n  `Workflow: ${e.workflow?.name ?? '—'}`,\n  `Addım: ${e.execution?.lastNodeExecuted ?? '—'}`,\n  `Xəta: ${message}`,\n  `İcra: ${e.execution?.id ?? '—'}`,\n].join('\\n');\nreturn [{ json: { text } }];"
+      }
+    },
+    {
+      "id": "Adminlərə göndər-h",
+      "name": "Adminlərə göndər",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://api:8000/internal/notify",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 120000
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ target: 'admins', text: $json.text }) }}"
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "muracSvcToken001",
+          "name": "Müraciət API servis tokeni"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "id": "manual-t",
+      "name": "Əl ilə test",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        200
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "testerr-s",
+      "name": "Nümunə xəta",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        200
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\"workflow\": {\"name\": \"TEST\"}, \"execution\": {\"id\": \"test\", \"lastNodeExecuted\": \"—\", \"error\": {\"message\": \"Bu, xəta bildirişinin testidir\"}}}",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Xəta": {
+      "main": [
+        [
+          {
+            "node": "Xətanın mətni",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Xətanın mətni": {
+      "main": [
+        [
+          {
+            "node": "Adminlərə göndər",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Əl ilə test": {
+      "main": [
+        [
+          {
+            "node": "Nümunə xəta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Nümunə xəta": {
+      "main": [
+        [
+          {
+            "node": "Xətanın mətni",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Baku"
+  },
+  "pinData": {}
+}

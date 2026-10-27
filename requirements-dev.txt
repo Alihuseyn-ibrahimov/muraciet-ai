@@ -1,0 +1,3 @@
+# İnkişaf və test asılılıqları (production image-ə düşmür)
+-r requirements.txt
+pytest>=8.3

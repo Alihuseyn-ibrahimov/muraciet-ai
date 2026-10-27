@@ -1,0 +1,212 @@
+# Vətəndaşa gedən mətnlər. Qurum bu mətnləri kodu dəyişmədən redaktə edə bilər.
+# {fiqurlu mötərizədəki} adlar avtomatik doldurulur. İcazə verilməyən ad yazılsa, sistem işə düşmür
+# və hansı şablonda nəyin səhv olduğunu göstərir. Mətndə adi fiqurlu mötərizə lazımdırsa {{ }} yazın.
+# Cavablar dövlət dilində verilir (m. 7.5).
+
+greeting: |-
+  Salam! Mən {org_name}-nin virtual köməkçisiyəm.
+  Sizə bu mövzularda kömək edə bilərəm:
+  • xidmətlər və prosedurlar haqqında məlumat;
+  • şikayət, ərizə və ya təklifin rəsmi qeydiyyatı;
+  • müraciətinizin statusunun yoxlanması.
+  Sualınızı yazın.
+
+off_topic: |-
+  Bağışlayın, mən yalnız {org_name}-nin xidmətləri və müraciətlərlə bağlı suallara kömək edə bilərəm.
+
+blocked: |-
+  Bağışlayın, bu sorğunu emal edə bilmərəm. Mən yalnız {org_name}-nin xidmətləri və müraciətlərlə bağlı suallara kömək edirəm.
+
+# {hotline}: .env-dəki HOTLINE_TEXT (boşdursa göstərilmir)
+human_handoff: |-
+  Sualınızı rəsmi müraciət kimi qeydə ala bilərəm, əməkdaşlarımız araşdırıb cavab verəcək.{hotline}
+
+rate_limited: Çox sayda mesaj göndərdiniz. Zəhmət olmasa bir dəqiqə sonra yenidən yazın.
+
+llm_unavailable: |-
+  Hazırda avtomatik cavab verə bilmirəm. Sualınızı rəsmi müraciət kimi qeydə ala bilərəm, əməkdaşlarımız cavab verəcək.
+
+no_answer_offer_appeal: |-
+  Bu barədə rəsmi məlumatım yoxdur. Sualınızı müraciət kimi qeydə alım? Əməkdaşlarımız araşdırıb cavab verəcək.
+
+consent_prompt: |-
+  Müraciətinizi rəsmi qeydə almaq üçün şəxsi məlumatlarınız lazımdır. Zəhmət olmasa aşağıdakı mətnlə tanış olun.
+
+consent_declined: |-
+  Anladım. Razılıq olmadan müraciəti rəsmi qeydə ala bilmərəm, amma ümumi suallarınıza cavab verməyə davam edə bilərəm.
+
+appeal_registered: |-
+  Müraciətiniz qeydə alındı: {number}.
+  Ən gec {due_date} tarixinədək cavablandırılacaq. Cavab bu çata gələcək.
+
+staff_question: |-
+  {number} üzrə əməkdaşımız soruşur:
+  {question}
+
+  Cavabınızı bu mesaja "Cavabla" (reply) ilə yazın.
+
+waiting_reminder: |-
+  Xatırlatma: {number} üzrə əməkdaşımızın sualı hələ cavabsızdır:
+  {question}
+
+official_answer: |-
+  📩 {number} üzrə rəsmi cavab:
+
+  {answer}
+
+  {signature}
+
+answer_signature: |-
+  Hörmətlə,
+  {org_name}
+
+# m. 7.8, 9.5, 14.0.8
+appeal_procedure: |-
+  Bu qərarla razı deyilsinizsə, ondan inzibati qaydada (yuxarı dövlət orqanına) və (və ya) məhkəmə qaydasında şikayət verə bilərsiniz.
+
+# m. 10.2
+extension_notice: |-
+  {number} üzrə müraciətinizə baxılma müddəti {due_date} tarixinədək uzadıldı.
+  Səbəb: {reason}
+
+# m. 7.10, 14.0.6. {letter_ref}: məktubun nömrəsi daxil edilibsə " (məktub № ...)", əks halda boş
+redirect_notice: |-
+  {number} üzrə müraciətinizdə qaldırılan məsələ qurumumuzun səlahiyyətinə aid olmadığı üçün {sent_date} tarixində aidiyyəti üzrə göndərildi{letter_ref}.
+  Göndərildiyi qurum: {target}
+
+# m. 8.2, 7.8
+not_reviewed_notice: |-
+  {number} üzrə müraciətiniz baxılmamış saxlanıldı.
+  Səbəb: {reason}
+
+  {appeal_procedure}
+
+reopened: |-
+  {number} üzrə müraciətiniz yenidən baxılmaq üçün göndərildi. Nəticə barədə sizə məlumat veriləcək.
+
+status_line: "{number}: {subject}. Status: {status} (son tarix: {due_date})"
+
+no_appeals: Sizin qeydə alınmış müraciətiniz yoxdur.
+
+feedback_thanks: Rəyiniz üçün təşəkkür edirik.
+
+# ---------- müraciət formu (Faza 6). Düymə adları kodda, mətnlər burada ----------
+ask_phone: |-
+  Telefon nömrənizi aşağıdakı "📱 Nömrəmi paylaş" düyməsi ilə göndərin.
+
+contact_not_own: |-
+  Yalnız öz nömrənizi qəbul edə bilərəm. Zəhmət olmasa "📱 Nömrəmi paylaş" düyməsini basın.
+
+ask_name: |-
+  Soyadınızı, adınızı və ata adınızı yazın.
+  Məsələn: Məmmədov Əli Vəli oğlu
+
+invalid_name: |-
+  Soyad, ad və ata adını tam yazın (ən azı üç söz, yalnız hərflər). Məsələn: Məmmədov Əli Vəli oğlu
+
+ask_fin: |-
+  Şəxsiyyət vəsiqənizin FİN kodunu yazın (7 simvol, məsələn: 5ABC12D).
+
+invalid_fin: |-
+  FİN kodu 7 simvoldan ibarət olmalıdır (rəqəm və latın hərfləri). Yenidən yazın.
+
+ask_address: |-
+  Faktiki yaşadığınız ünvanı yazın (şəhər/rayon, küçə, ev, mənzil).
+
+invalid_address: |-
+  Ünvan çox qısadır. Zəhmət olmasa tam yazın (şəhər/rayon, küçə, ev, mənzil).
+
+confirm_profile: |-
+  Məlumatlarınız:
+  {profile}
+
+  Düzdür?
+
+confirm_appeal: |-
+  Müraciətiniz:
+  Mövzu: {subject}
+  {summary}
+
+  Məlumatlarınız:
+  {profile}
+
+  Göndərim?
+
+appeal_cancelled: |-
+  Müraciət göndərilmədi. Problemi yenidən yazın, mən qeydə almağa kömək edəcəyəm.
+
+registration_failed: |-
+  Müraciəti qeydə almaq alınmadı. Zəhmət olmasa bir az sonra yenidən cəhd edin.
+
+my_data: |-
+  Məlumatlarınız:
+  {profile}
+
+no_profile: |-
+  Hələ məlumatlarınız qeydə alınmayıb. Onlar ilk müraciət zamanı soruşulur.
+
+choose_appeal: |-
+  Cavabınız hansı müraciətə aiddir?
+
+reply_forwarded: |-
+  Cavabınız {number} üzrə əməkdaşımıza çatdırıldı.
+
+question_closed: |-
+  {number} üzrə əməkdaşın sualı artıq bağlanıb. Yeni məlumatı ayrıca müraciət kimi göndərə bilərsiniz.
+
+feedback_reason_prompt: |-
+  Nəyə görə qane olmadığınızı qısaca yazın. Müraciətiniz yenidən baxılmaq üçün göndəriləcək.
+
+dismissed: |-
+  Yaxşı. Başqa sualınız olarsa, yazın.
+
+use_buttons: |-
+  Zəhmət olmasa aşağıdakı düymələrdən birini seçin.
+
+# Veb-vidcet müraciət qeydə almır (təsdiqlənmiş telefon lazımdır). {bot}: @bot_adı
+web_use_telegram: |-
+  Rəsmi müraciət yalnız Telegram botumuz vasitəsilə qeydə alınır: {bot}
+
+text_only: |-
+  Hazırda yalnız mətn mesajlarını qəbul edirəm. Zəhmət olmasa sualınızı yazın.
+
+attachment_saved: |-
+  📎 Fayl qəbul edildi ({count}/{limit}). O, yazdığınız (və ya indi yazacağınız) müraciətə əlavə olunacaq. Problemi mətnlə də yazın.
+
+attachment_limit: |-
+  Bir müraciətə ən çoxu {limit} fayl əlavə etmək olar.
+
+attachment_type: |-
+  Bu fayl növü qəbul olunmur. Şəkil (JPG, PNG) və ya PDF göndərin.
+
+attachment_too_big: |-
+  Fayl çox böyükdür. Ən çoxu {mb} MB olan fayl göndərin.
+
+attachment_failed: |-
+  Faylı qəbul edə bilmədim. Zəhmət olmasa bir azdan yenidən göndərin.
+
+live_chat_waiting: |-
+  💬 Operatora qoşulursunuz. Əməkdaşımız qəbul edən kimi burada yazışa biləcəksiniz. Gözləyərkən sualınızı yaza bilərsiniz. Çatı bitirmək üçün /bitir yazın.
+
+live_chat_connected: |-
+  ✅ Operator qoşuldu. Yazdıqlarınız birbaşa əməkdaşımıza çatır. Çatı bitirmək üçün /bitir yazın.
+
+live_chat_closed: |-
+  Çat bitdi. Əlavə sualınız olarsa, yaza bilərsiniz. Rəsmi müraciət etmək üçün probleminizi təsvir edin.
+
+live_chat_expired: |-
+  Hazırda bütün operatorlar məşğuldur, üzr istəyirik.{hotline}
+  Sualınızı yaza bilərsiniz: rəsmi müraciət kimi qeydə alıb əməkdaşlarımıza çatdıraram.
+
+human_handoff_live: |-
+  Əməkdaşımızla canlı yazışmaq üçün "💬 Operatorla danış" düyməsini basın. Sualınızı rəsmi müraciət kimi də qeydə ala bilərəm: əməkdaşlarımız araşdırıb cavab verəcək.
+
+live_chat_text_only: |-
+  Canlı çatda yalnız mətn ötürülür. Sənədi rəsmi müraciətə əlavə etmək üçün çatı /bitir ilə bağlayıb müraciət yazarkən göndərin.
+
+live_chat_offline: |-
+  Operatorlar yalnız iş vaxtı canlı çatda cavab verir.{hotline}
+  Sualınızı rəsmi müraciət kimi qeydə ala bilərəm, əməkdaşlarımız araşdırıb cavab verəcək.
+
+describe_problem: |-
+  Problemi qısaca yazın: nə baş verib, harada, nə vaxtdan və nə istəyirsiniz.

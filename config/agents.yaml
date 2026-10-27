@@ -1,0 +1,21 @@
+# Hər agentin modeli (spec 5-ci bölmə). Təsnifat agentləri sürətli modeldə, mətn yazan və
+# yoxlayan agentlər güclü modeldə işləyir. İstənilən agenti digərlərinə toxunmadan lokal modelə
+# keçirmək olar, məsələn: {provider: ollama, model: qwen2.5:7b}
+# Provayderlər: anthropic, openai, ollama, vllm
+# effort (yalnız anthropic): low | medium | high | xhigh | max. Claude 5.5 modellərində thinking defolt
+# olaraq açıqdır; effort onun miqdarını və xərci idarə edir. Təsnifat və qısa cavablar üçün low,
+# mühakimə tələb edən yoxlama və mətn yazmaq üçün medium (Anthropic sənədlərinin tövsiyəsi). Dəyişikliyi
+# eval ilə yoxlayın: python -m eval.run_agent_eval --agent <ad>
+default_provider: anthropic
+
+agents:
+  guard:   {model: claude-haiku-5-5, effort: low}    # 1. Təhlükəsizlik
+  router:  {model: claude-haiku-5-5, effort: low}    # 2. Marşrutlaşdırıcı
+  faq:     {model: claude-sonnet-5-5, effort: low}   # 3. Məlumat (RAG)
+  intake:  {model: claude-sonnet-5-5, effort: low}   # 4. Qəbul
+  triage:  {model: claude-haiku-5-5, effort: low}    # 5. Triaj
+  routing: {model: claude-haiku-5-5, effort: low}    # 6. Yönləndirmə
+  drafter: {model: claude-sonnet-5-5, effort: medium}   # 7. Cavab layihəsi
+  qa:      {model: claude-sonnet-5-5, effort: medium}   # 8. Keyfiyyət yoxlaması
+  curator: {model: claude-sonnet-5-5, effort: medium}   # 9. Kurator (👍 cavabdan bilik bazası təklifi)
+  analyst: {model: claude-sonnet-5-5, effort: medium}   # 10. Hesabat analitiki (rəhbərin həftəlik hesabatı)

@@ -1,0 +1,422 @@
+{
+  "agent": "triage",
+  "model": "anthropic/claude-haiku-5-5 effort=low",
+  "n": 23,
+  "run_at": "2026-10-21T19:18:26+04:00",
+  "metrics": {
+    "category_accuracy": 1.0,
+    "priority_accuracy": 1.0,
+    "legal_accuracy": 1.0,
+    "all_correct": 1.0,
+    "under_prioritized": 0,
+    "urgent_recall": 1.0,
+    "failures": 0,
+    "by_lang": {
+      "az": {
+        "n": 21,
+        "accuracy": 1.0
+      },
+      "ru": {
+        "n": 1,
+        "accuracy": 1.0
+      },
+      "translit": {
+        "n": 1,
+        "accuracy": 1.0
+      }
+    },
+    "errors": []
+  },
+  "latency_ms": {
+    "p50": 1508,
+    "p95": 2727
+  },
+  "rows": [
+    {
+      "case": {
+        "subject": "Pensiya köçmür",
+        "summary": "Pensiyam 3 aydır köçmür.",
+        "category": "complaint",
+        "priority": [
+          "normal",
+          "high"
+        ],
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "complaint",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 5305
+    },
+    {
+      "case": {
+        "subject": "Əməkhaqqı",
+        "summary": "İşəgötürən 2 aydır əməkhaqqımı vermir.",
+        "category": "complaint",
+        "priority": [
+          "normal",
+          "high"
+        ],
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "complaint",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 1466
+    },
+    {
+      "case": {
+        "subject": "Evsiz qalmışıq",
+        "summary": "Kirayə qaldığımız evdən çıxarılmışıq, uşaqlarla bu gecə qalmağa yerimiz yoxdur.",
+        "category": [
+          "request",
+          "complaint"
+        ],
+        "priority": "urgent",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "request",
+        "priority": "urgent",
+        "legal_issue": false
+      },
+      "latency_ms": 1591
+    },
+    {
+      "case": {
+        "subject": "Həyati dərman",
+        "summary": "Əlilliyi olan uşağımın həyati dərmanı bitib, ala bilmirik, sabaha qədər lazımdır.",
+        "category": [
+          "request",
+          "complaint"
+        ],
+        "priority": "urgent",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "request",
+        "priority": "urgent",
+        "legal_issue": false
+      },
+      "latency_ms": 1633
+    },
+    {
+      "case": {
+        "subject": "ÜDSY imtinası",
+        "summary": "Ünvanlı sosial yardım ərizəmə əsassız imtina verilib, qərar qanunsuzdur.",
+        "category": "complaint",
+        "priority": "normal",
+        "legal_issue": true
+      },
+      "pred": {
+        "category": "complaint",
+        "priority": "normal",
+        "legal_issue": true
+      },
+      "latency_ms": 1420
+    },
+    {
+      "case": {
+        "subject": "Məhkəmə qərarı",
+        "summary": "Məhkəmənin işə bərpa haqqında qanuni qüvvəyə minmiş qərarı işəgötürən tərəfindən icra olunmur.",
+        "category": "complaint",
+        "priority": [
+          "normal",
+          "high"
+        ],
+        "legal_issue": true
+      },
+      "pred": {
+        "category": "complaint",
+        "priority": "high",
+        "legal_issue": true
+      },
+      "latency_ms": 1334
+    },
+    {
+      "case": {
+        "subject": "ÜDSY müraciəti",
+        "summary": "Ünvanlı sosial yardım almaq üçün müraciət etmək istəyirəm.",
+        "category": "request",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "request",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 1347
+    },
+    {
+      "case": {
+        "subject": "Təkrar qiymətləndirmə",
+        "summary": "Əlilliyimin təkrar qiymətləndirilməsi üçün müraciət edirəm.",
+        "category": "request",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "request",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 1508
+    },
+    {
+      "case": {
+        "subject": "Tənha yaşlı",
+        "summary": "Tənha yaşlı qonşum yataq xəstəsidir, ona baxan yoxdur, sosial xidmət göstərilməsini xahiş edirəm.",
+        "category": "request",
+        "priority": "high",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "request",
+        "priority": "high",
+        "legal_issue": false
+      },
+      "latency_ms": 1677
+    },
+    {
+      "case": {
+        "subject": "Portal xətası",
+        "summary": "Elektron portalda müraciət düyməsi işləmir.",
+        "category": "complaint",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "complaint",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 1603
+    },
+    {
+      "case": {
+        "subject": "Onlayn növbə",
+        "summary": "Qəbul mərkəzində onlayn növbə sistemi tətbiq olunsun.",
+        "category": "suggestion",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "suggestion",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 1261
+    },
+    {
+      "case": {
+        "subject": "SMS bildiriş",
+        "summary": "Pensiya ödənişinin vaxtı barədə SMS bildiriş göndərilməsini təklif edirəm.",
+        "category": "suggestion",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "suggestion",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 1966
+    },
+    {
+      "case": {
+        "subject": "Pensiya artımı",
+        "summary": "Pensiya artımı barədə məlumat almaq istəyirəm.",
+        "category": "information",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "information",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 2727
+    },
+    {
+      "case": {
+        "subject": "ÜDSY şərtləri",
+        "summary": "Ünvanlı sosial yardımın təyin olunma şərtlərini öyrənmək istəyirəm.",
+        "category": "information",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "information",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 1239
+    },
+    {
+      "case": {
+        "subject": "Mənzil növbəsi",
+        "summary": "Şəhid ailəsiyik, mənzil növbəsində 5 ildir gözləyirik.",
+        "category": [
+          "complaint",
+          "request"
+        ],
+        "priority": [
+          "normal",
+          "high"
+        ],
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "request",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 1582
+    },
+    {
+      "case": {
+        "subject": "Kobud davranış",
+        "summary": "Qəbul mərkəzində əməkdaş mənimlə kobud danışdı.",
+        "category": "complaint",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "complaint",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 1302
+    },
+    {
+      "case": {
+        "subject": "Evin damı",
+        "summary": "Müharibə əlili olan qardaşıma verilən evin damı uçub, yağış içəri dolur.",
+        "category": [
+          "complaint",
+          "request"
+        ],
+        "priority": [
+          "high",
+          "urgent"
+        ],
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "complaint",
+        "priority": "urgent",
+        "legal_issue": false
+      },
+      "latency_ms": 1445
+    },
+    {
+      "case": {
+        "subject": "Qaz kəsilib",
+        "summary": "Çoxuşaqlı ailəyik, borca görə qaz kəsilib, qışda uşaqlar soyuqdadır.",
+        "category": [
+          "request",
+          "complaint"
+        ],
+        "priority": [
+          "high",
+          "urgent"
+        ],
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "complaint",
+        "priority": "urgent",
+        "legal_issue": false
+      },
+      "latency_ms": 1977
+    },
+    {
+      "case": {
+        "subject": "Birdəfəlik yardım",
+        "summary": "Birdəfəlik maddi yardım almaq istəyirəm.",
+        "category": "request",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "request",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 1220
+    },
+    {
+      "case": {
+        "subject": "İş axtarıram",
+        "summary": "İşsizəm, iş tapmaqda kömək istəyirəm.",
+        "category": "request",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "request",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 1306
+    },
+    {
+      "case": {
+        "subject": "Arayışda səhv",
+        "summary": "Mənə verilən arayışda soyadım səhv yazılıb, düzəldilməsini xahiş edirəm.",
+        "category": "request",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "pred": {
+        "category": "request",
+        "priority": "normal",
+        "legal_issue": false
+      },
+      "latency_ms": 1286
+    },
+    {
+      "case": {
+        "subject": "Пособие",
+        "summary": "Уже два месяца не приходит пособие по инвалидности.",
+        "category": "complaint",
+        "priority": [
+          "normal",
+          "high"
+        ],
+        "legal_issue": false,
+        "lang": "ru"
+      },
+      "pred": {
+        "category": "complaint",
+        "priority": "high",
+        "legal_issue": false
+      },
+      "latency_ms": 2145
+    },
+    {
+      "case": {
+        "subject": "Pensiya",
+        "summary": "pensiyam 2 aydir kocmur",
+        "category": "complaint",
+        "priority": [
+          "normal",
+          "high"
+        ],
+        "legal_issue": false,
+        "lang": "translit"
+      },
+      "pred": {
+        "category": "complaint",
+        "priority": "high",
+        "legal_issue": false
+      },
+      "latency_ms": 1775
+    }
+  ]
+}

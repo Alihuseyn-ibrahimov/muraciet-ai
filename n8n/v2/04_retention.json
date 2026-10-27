@@ -1,0 +1,98 @@
+{
+  "id": "muracRetention01",
+  "name": "Müraciət: saxlama müddəti təmizliyi (hər gün 03:00)",
+  "active": false,
+  "nodes": [
+    {
+      "id": "Hər gün 03:00-t",
+      "name": "Hər gün 03:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 3 * * *"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Təmizlik-h",
+      "name": "Təmizlik",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://api:8000/internal/retention/cleanup",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "muracSvcToken001",
+          "name": "Müraciət API servis tokeni"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "id": "manual-t",
+      "name": "Əl ilə test",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        200
+      ],
+      "parameters": {}
+    }
+  ],
+  "connections": {
+    "Hər gün 03:00": {
+      "main": [
+        [
+          {
+            "node": "Təmizlik",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Əl ilə test": {
+      "main": [
+        [
+          {
+            "node": "Təmizlik",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Baku",
+    "errorWorkflow": "muracErrorNotif1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all"
+  },
+  "pinData": {}
+}

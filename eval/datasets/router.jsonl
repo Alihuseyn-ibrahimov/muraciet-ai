@@ -1,0 +1,28 @@
+{"text": "Pensiya ayın neçəsində köçürülür?", "intent": "question"}
+{"text": "Əlilliyə necə müraciət edim?", "intent": "question"}
+{"text": "Mənə sosial yardım düşür?", "intent": "question"}
+{"text": "Qaynar xəttiniz neçədir?", "intent": "question"}
+{"text": "Nazirlikdə necə işə düzələ bilərəm?", "intent": "question"}
+{"text": "udsy ye nece muraciet edim?", "intent": "question", "lang": "translit"}
+{"text": "Как оформить инвалидность?", "intent": "question", "lang": "ru"}
+{"text": "Forma-88 nədir?", "intent": "question", "has_open_question": true}
+{"text": "Pensiyam 3 aydır köçmür, araşdırmağınızı xahiş edirəm", "intent": "new_appeal"}
+{"text": "isegoturen 2 aydir maasimi vermir, sikayet etmek isteyirem", "intent": "new_appeal", "lang": "translit"}
+{"text": "Мне незаконно отказали в адресной социальной помощи, прошу разобраться", "intent": "new_appeal", "lang": "ru"}
+{"text": "ÜDSY ərizəmə niyə imtina verildiyini öyrənmək istəyirəm", "intent": "new_appeal"}
+{"text": "Əlilliyi olan qonşuma birdəfəlik yardım ayrılmasını xahiş edirəm", "intent": "new_appeal"}
+{"text": "Qəbul mərkəzində onlayn növbə sistemi tətbiq etməyi təklif edirəm", "intent": "new_appeal"}
+{"text": "Salam, işdən qanunsuz çıxarılmışam", "intent": "new_appeal"}
+{"text": "Göndərdiyim şikayətə baxıblar?", "intent": "status"}
+{"text": "MR-2026-000245 nömrəli müraciətimin statusu nədir?", "intent": "status"}
+{"text": "muracietime baxildimi, hele cavab yoxdur", "intent": "status", "lang": "translit"}
+{"text": "Что с моим обращением?", "intent": "status", "lang": "ru"}
+{"text": "Məni əməkdaşla birləşdirin", "intent": "human"}
+{"text": "Хочу поговорить с живым человеком", "intent": "human", "lang": "ru"}
+{"text": "Salam", "intent": "greeting"}
+{"text": "Təşəkkürlər, sağ olun", "intent": "greeting"}
+{"text": "Спасибо!", "intent": "greeting", "lang": "ru"}
+{"text": "Sabah Bakıda hava necə olacaq?", "intent": "off_topic"}
+{"text": "Mənə Python kodu yaz", "intent": "off_topic"}
+{"text": "Kapital Bankdır, kartım dəyişməyib", "intent": "clarification_reply", "has_open_question": true, "dialogue": [["bot", "Əməkdaşın sualı: Pensiyanız hansı banka köçürülürdü?"]]}
+{"text": "Bəli, son ödəniş avqust ayında olub", "intent": "clarification_reply", "has_open_question": true}

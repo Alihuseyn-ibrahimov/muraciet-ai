@@ -1,0 +1,21 @@
+# Yalnız inkişaf mühiti üçün: docker compose bu faylı avtomatik birləşdirir.
+# Testlər və hostdakı alətlər qoşulsun deyə portlar YALNIZ 127.0.0.1-ə açılır (şəbəkəyə yox).
+# Production-da istifadə olunmur: docker compose -f docker-compose.yml -f docker-compose.prod.yml
+services:
+  postgres:
+    ports: ["127.0.0.1:55432:5432"]
+
+  redis:
+    ports: ["127.0.0.1:56379:6379"]
+
+  # Hostdakı Windows Ollama 11434-ü tutur, ona görə konteyner (bge-m3) 11435-də açılır: EMBEDDINGS_URL
+  ollama:
+    ports: ["127.0.0.1:11435:11434"]
+
+  # Veb-vidcet və admin API: http://127.0.0.1:8000
+  api:
+    ports: ["127.0.0.1:8000:8000"]
+
+  # n8n paneli: http://127.0.0.1:5678
+  n8n:
+    ports: ["127.0.0.1:5678:5678"]

@@ -1,0 +1,529 @@
+{
+  "agent": "faq",
+  "model": "anthropic/claude-sonnet-5-5 effort=low",
+  "n": 30,
+  "run_at": "2026-10-21T19:15:09+04:00",
+  "metrics": {
+    "answerable_accuracy": 1.0,
+    "coverage": 1.0,
+    "keyword_hit_rate": 1.0,
+    "hallucination_rate": 0.0,
+    "failures": 0,
+    "by_lang": {
+      "az": {
+        "n": 25,
+        "accuracy": 1.0
+      },
+      "ru": {
+        "n": 3,
+        "accuracy": 1.0
+      },
+      "translit": {
+        "n": 2,
+        "accuracy": 1.0
+      }
+    },
+    "errors": []
+  },
+  "latency_ms": {
+    "p50": 2436,
+    "p95": 4379
+  },
+  "rows": [
+    {
+      "case": {
+        "question": "Pensiya ayın neçəsində köçürülür?",
+        "answerable": true,
+        "any": [
+          "8-15",
+          "20-28"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Hazırkı qrafikə görə Bakı və Sumqayıt şəhərləri, eləcə də Abşeron rayonunda pensiyalar hər ayın 8-15-i aralığında, respublikanın digər bölgələrində, o cümlədən güzəştli şərtlərlə pensiya ödənişləri isə 20-28-i aralığında ödənilir. Ödəniş qrafikinə dəyişiklik edilərsə, bu haqda öncədən məlumat veriləcək.",
+        "sources": [
+          "Pensiya, sosial müavinət və təqaüd ödənişləri"
+        ]
+      },
+      "latency_ms": 2917
+    },
+    {
+      "case": {
+        "question": "pensiya ayin necesinde kocurulur",
+        "answerable": true,
+        "any": [
+          "8-15",
+          "20-28"
+        ],
+        "lang": "translit"
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Hazırda müəyyən edilmiş qrafikə görə Bakı və Sumqayıt şəhərləri, eləcə də Abşeron rayonunda pensiyalar hər ayın 8-15-i aralığında, respublikanın digər bölgələrində, o cümlədən güzəştli şərtlərlə pensiya ödənişləri isə 20-28-i aralığında ödənilir. Qrafikdə dəyişiklik olarsa, bu haqda öncədən məlumat veriləcək.",
+        "sources": [
+          "Pensiya, sosial müavinət və təqaüd ödənişləri"
+        ]
+      },
+      "latency_ms": 2340
+    },
+    {
+      "case": {
+        "question": "Когда перечисляют пенсию?",
+        "answerable": true,
+        "any": [
+          "8-15",
+          "20-28"
+        ],
+        "lang": "ru"
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Bakı və Sumqayıt şəhərləri, eləcə də Abşeron rayonunda pensiyalar hər ayın 8-15-i aralığında, respublikanın digər bölgələrində, o cümlədən güzəştli şərtlərlə pensiya ödənişləri isə 20-28-i aralığında ödənilir. Ödəniş qrafikinə dəyişiklik edilərsə, bu barədə öncədən məlumat veriləcək.",
+        "sources": [
+          "Pensiya, sosial müavinət və təqaüd ödənişləri"
+        ]
+      },
+      "latency_ms": 3005
+    },
+    {
+      "case": {
+        "question": "Pensiyada artım olacaqmı?",
+        "answerable": true,
+        "any": [
+          "ictimaiyyət",
+          "məlumat veriləcək"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Müvafiq artımlar olarsa, bununla bağlı ictimaiyyətə ətraflı məlumat veriləcək.",
+        "sources": [
+          "Pensiya, sosial müavinət və təqaüd ödənişləri"
+        ]
+      },
+      "latency_ms": 2058
+    },
+    {
+      "case": {
+        "question": "Pensiyam köçməyib, amma qüvvədədir. Nə edim?",
+        "answerable": true,
+        "must": [
+          "bank"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Pensiyanız qüvvədədir, lakin köçürülməyibsə, sualla bağlı müvafiq banka müraciət etməyiniz xahiş olunur. Məsələ ilə bağlı Dövlət Sosial Müdafiə Fonduna da müraciət edə bilərsiniz: (012) 434-55-86, https://www.facebook.com/dsmf.sosial.gov.az",
+        "sources": [
+          "Pensiya, sosial müavinət və təqaüd ödənişləri"
+        ]
+      },
+      "latency_ms": 2843
+    },
+    {
+      "case": {
+        "question": "Əlilliyə necə müraciət edim?",
+        "answerable": true,
+        "must": [
+          "forma-88"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Əlilliyinizin qiymətləndirilməsi üçün ilk növbədə qeydiyyatda olduğunuz ərazi üzrə tibb müəssisəsinə müraciət edərək hazırkı diaqnoz və ağırlaşmalarınızla bağlı forma-88 sənədi rəsmiləşdirməlisiniz. Tibb müəssisəsi forma-88 göndərişini elektron sistemə daxil etdikdən sonra Əlilliyinizin qiymətləndirilməsi Nazirlər Kabinetinin 13 may 2022-ci il tarixli 187 nömrəli qərarı ilə təsdiq edilmiş \"Əlilliyin müəyyən olunması meyarları\"na uyğun aparılacaq.",
+        "sources": [
+          "Əlilliyin müəyyən edilməsi"
+        ]
+      },
+      "latency_ms": 3201
+    },
+    {
+      "case": {
+        "question": "Как оформить инвалидность?",
+        "answerable": true,
+        "must": [
+          "forma-88"
+        ],
+        "lang": "ru"
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Əlilliyin qiymətləndirilməsi üçün ilk növbədə qeydiyyatda olduğunuz ərazi üzrə tibb müəssisəsinə müraciət edərək hazırkı diaqnoz və ağırlaşmalarınızla bağlı forma-88 sənədi rəsmiləşdirməlisiniz. Tibb müəssisəsi forma-88 göndərişini elektron sistemə daxil etdikdən sonra Nazirlər Kabinetinin 13 may 2022-ci il tarixli 187 nömrəli qərarı ilə təsdiq edilmiş meyarlara uyğun olaraq qiymətləndirmə aparılacaq. Meyarlarla bu linkdə tanış ola bilərsiniz: https://e-qanun.az/framework/49623.",
+        "sources": [
+          "Əlilliyin müəyyən edilməsi"
+        ]
+      },
+      "latency_ms": 3269
+    },
+    {
+      "case": {
+        "question": "Əlilliyin meyarlarını harada oxuya bilərəm?",
+        "answerable": true,
+        "must": [
+          "e-qanun.az/framework/49623"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Əlilliyin qiymətləndirilməsi Nazirlər Kabinetinin 13 may 2022-ci il tarixli 187 nömrəli qərarı ilə təsdiq edilmiş \"Əlilliyin müəyyən olunması meyarları\"na uyğun aparılır. Meyarlarla bu linkdə tanış ola bilərsiniz: https://e-qanun.az/framework/49623. Qeyd etdiyiniz məsələ ilə bağlı qeydiyyat üzrə tibb müəssisəsinə müraciət edərək forma-88 rəsmiləşdirməyiniz tövsiyə olunur.",
+        "sources": [
+          "Əlilliyin müəyyən edilməsi"
+        ]
+      },
+      "latency_ms": 2372
+    },
+    {
+      "case": {
+        "question": "Əlilliyi olan şəxs sürücülük vəsiqəsi ala bilərmi?",
+        "answerable": true,
+        "must": [
+          "58065"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Nəqliyyat vasitələrinin idarə olunmasını qeyri-mümkün edən tibbi göstəricilərin siyahısı ilə bu linkdə ətraflı tanış ola bilərsiniz: https://e-qanun.az/framework/58065",
+        "sources": [
+          "Əlilliyin müəyyən edilməsi"
+        ]
+      },
+      "latency_ms": 2052
+    },
+    {
+      "case": {
+        "question": "Dərmanlarımı nazirlik təmin edə bilərmi?",
+        "answerable": true,
+        "any": [
+          "aid deyil"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Xeyr, dərman preparatları ilə təminat və müalicə Nazirliyin fəaliyyət sahəsinə aid deyil.",
+        "sources": [
+          "Əlilliyin müəyyən edilməsi"
+        ]
+      },
+      "latency_ms": 1522
+    },
+    {
+      "case": {
+        "question": "ÜDSY-yə necə müraciət etmək olar?",
+        "answerable": true,
+        "must": [
+          "e-gov.az"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Ailəni təmsil edən yetkinlik yaşına çatmış və əmək qabiliyyətli şəxs yaşayış yeri üzrə rayon (şəhər) icra hakimiyyəti başçısının inzibati ərazi dairəsi və sahə inzibati ərazi dairəsi üzrə nümayəndəliklərinin verdiyi ailə tərkibi haqqında arayış əsasında notariat orqanı tərəfindən təsdiq edilmiş ərizə ilə bu link vasitəsilə müraciət edə bilər: https://www.e-gov.az/az/services/read/3421/1",
+        "sources": [
+          "Ünvanlı dövlət sosial yardım və digər yardımlar"
+        ]
+      },
+      "latency_ms": 2458
+    },
+    {
+      "case": {
+        "question": "udsy ye imtina gelib ne edim",
+        "answerable": true,
+        "any": [
+          "yenidən"
+        ],
+        "lang": "translit"
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "ÜDSY müraciətinizə imtina cavabı gəlibsə, yenidən ünvanlı dövlət sosial yardıma müraciət etməyiniz tövsiyə olunur. Müraciət linki: https://www.e-gov.az/az/services/read/3421/1. Cavabla razı deyilsinizsə, ondan inzibati qaydada (yuxarı dövlət orqanına) və (və ya) məhkəmə qaydasında şikayət verə bilərsiniz.",
+        "sources": [
+          "Vətəndaş müraciətlərinin qəbulu və baxılması qaydası",
+          "Ünvanlı dövlət sosial yardım və digər yardımlar"
+        ]
+      },
+      "latency_ms": 2510
+    },
+    {
+      "case": {
+        "question": "Ərzaq yardımı paylayırsınız?",
+        "answerable": true,
+        "any": [
+          "keçirilmir"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Ərzaq yardımlarının paylanması Əmək və Əhalinin Sosial Müdafiəsi Nazirliyi ilə əməkdaşlıq edən sosial tərəfdaşlar tərəfindən aparılır. Hazırda hər hansı yardımların paylanması həyata keçirilmir.",
+        "sources": [
+          "Ünvanlı dövlət sosial yardım və digər yardımlar"
+        ]
+      },
+      "latency_ms": 2485
+    },
+    {
+      "case": {
+        "question": "Əlilliyi olanlara birdəfəlik yardım üçün hara yazmalıyam?",
+        "answerable": true,
+        "must": [
+          "sxa@sosial.gov.az"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Müvafiq Əlillik dərəcəsi olan şəxs birdəfəlik maddi yardımla bağlı Sosial Xidmətlər Agentliyinə ərizə yaza bilər. Ərizəyə şəxsiyyət vəsiqəsinin surəti və Əlilliyi təsdiq edən sənəd əlavə olunmalıdır. Ərizəni poçt vasitəsilə Bakı şəhəri, Ziya Bünyadov pr. 1965, Çinar Park Biznes Mərkəzi, 1-ci bina, 2-ci mərtəbə, 1075 ünvanına və ya sxa@sosial.gov.az elektron ünvanına göndərə bilərsiniz. Əlavə məlumat üçün telefon: (012) 525 41 30.",
+        "sources": [
+          "Ünvanlı dövlət sosial yardım və digər yardımlar"
+        ]
+      },
+      "latency_ms": 3102
+    },
+    {
+      "case": {
+        "question": "Məşğulluğa onlayn necə qeydiyyatdan keçim?",
+        "answerable": true,
+        "must": [
+          "emas.sosial.gov.az"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Emas.sosial.gov.az saytına ASAN Login ilə daxil olun. Məşğulluq bölməsində \"Müraciət\", sonra \"Yeni müraciət\" altbaşlığına klikləyin. Məlumatlarınızın düzgünlüyünü yoxlayıb \"İrəli\" düyməsini seçin, elektron ərizənin aşağı sağ küncündəki \"Sənədin qeydiyyatı\" düyməsinə klikləyin və qeydiyyatı bitirin. Müraciət \"İcrada olan müraciətlər\" bölməsində görünəcək; sağ tərəfdəki kiçik ox simvoluna klikləyib \"Müraciətimi karyera məsləhətçisinə göndər\" başlığını seçin.",
+        "sources": [
+          "Məşğulluq, işsizlik və işə qəbul"
+        ]
+      },
+      "latency_ms": 2687
+    },
+    {
+      "case": {
+        "question": "Nazirlikdə necə işləyə bilərəm?",
+        "answerable": true,
+        "any": [
+          "ise-qebul",
+          "müsabiqə"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Nazirliyin aparatında və Dövlət Əmək Müfəttişliyi Xidmətində dövlət qulluğuna qəbul \"Dövlət qulluğu haqqında\" Azərbaycan Respublikasının Qanununa uyğun olaraq müsabiqə və müsahibə yolu ilə həyata keçirilir. Vakant vəzifələr üzrə müsabiqə və müsahibələr barədə məlumatı Dövlət İmtahan Mərkəzinin və Nazirliyin rəsmi saytının \"İşə qəbul\" bölməsindən əldə edə bilərsiniz: https://sosial.gov.az/az/nazirlik/ise-qebul. Nazirliyin strukturuna daxil olan digər qurumlarda yeni kadrlara ehtiyac yarandıqca müsabiqə elan edilir və bu barədə mediada, o cümlədən sosial şəbəkələrdəki müvafiq səhifələrdə məlumat verilir.",
+        "sources": [
+          "Məşğulluq, işsizlik və işə qəbul"
+        ]
+      },
+      "latency_ms": 4379
+    },
+    {
+      "case": {
+        "question": "Sosial Xidmətlər Agentliyinə CV-ni hara göndərim?",
+        "answerable": true,
+        "must": [
+          "sxa_cv@sosial.gov.az"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "İşlə bağlı müraciətinizi və CV-nizi Sosial Xidmətlər Agentliyinin sxa_cv@sosial.gov.az ünvanına göndərə bilərsiniz. Agentliyin işə qəbul tələb və şərtlərinə uyğun gəldiyiniz halda sizə məlumat veriləcək.",
+        "sources": [
+          "Məşğulluq, işsizlik və işə qəbul"
+        ]
+      },
+      "latency_ms": 1662
+    },
+    {
+      "case": {
+        "question": "Sosial mənzillərə haradan baxa bilərəm?",
+        "answerable": true,
+        "must": [
+          "ms.sosial.gov.az"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Sosial mənzillərlə bağlı qiymət və digər məlumatlara bu linkdən baxa bilərsiniz: https://ms.sosial.gov.az/",
+        "sources": [
+          "Mənzil təminatı"
+        ]
+      },
+      "latency_ms": 2013
+    },
+    {
+      "case": {
+        "question": "Dövlət ev kimlərə verir?",
+        "answerable": true,
+        "any": [
+          "şəhid"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Azərbaycan Respublikasının ərazi bütövlüyünün və Konstitusiya quruluşunun müdafiəsi zamanı fiziki sağlamlığını itirmiş vətəndaşlar (müharibə ilə əlaqədar əlilliyi olan şəxslər), şəhid ailələri, həmçinin Vətən Müharibəsi Qəhrəmanı adına layiq görülən şəxslər və onların ailələri dövlət hesabına mənzillə (fərdi evlə) təmin olunurlar. Bu kateqoriyadan olan şəxslərin mənzil növbəsinə götürülməsi, növbənin dəyişdirilməsi və ləğv olunması müvafiq rayon (şəhər) icra hakimiyyətlərinin səlahiyyətindədir.",
+        "sources": [
+          "Mənzil təminatı"
+        ]
+      },
+      "latency_ms": 2655
+    },
+    {
+      "case": {
+        "question": "Əmək müfəttişliyinə şikayəti necə göndərim?",
+        "answerable": true,
+        "must": [
+          "demx@sosial.gov.az"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Müraciətinizin qeydiyyata alınıb rəsmi araşdırmaya yönləndirilməsi üçün ad, soyad, ata adı, şəxsiyyət vəsiqənizin FİN kodu, faktiki yaşadığınız ünvan, əlaqə nömrəsi və müraciətinizin mətnini qeyd edərək demx@sosial.gov.az elektron poçt ünvanına göndərin. Əlavə məlumat üçün Dövlət Əmək Müfəttişliyi Xidməti ilə (012) 525 55 45 nömrəsi ilə əlaqə saxlaya bilərsiniz.",
+        "sources": [
+          "Əmək münasibətləri"
+        ]
+      },
+      "latency_ms": 2812
+    },
+    {
+      "case": {
+        "question": "Qaynar xəttiniz neçədir?",
+        "answerable": true,
+        "must": [
+          "142"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Qaynar xətt \"142\" Çağrı mərkəzidir. Məsələ ilə bağlı bu nömrəyə zəng edib suallarınızı ətraflı bildirə bilərsiniz.",
+        "sources": [
+          "Əlaqə, vətəndaş qəbulu və digər qurumlar"
+        ]
+      },
+      "latency_ms": 2265
+    },
+    {
+      "case": {
+        "question": "Müraciətə neçə günə baxılır?",
+        "answerable": true,
+        "any": [
+          "15 iş",
+          "on beş iş"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Müraciətə qeydiyyata alındığı gündən 15 iş günü ərzində baxılır. Əlavə öyrənmə və yoxlama tələb olunduqda bu müddət 30 iş gününədək ola bilər və bu barədə vətəndaşa əvvəlcədən məlumat verilir. Təxirəsalınmaz məsələlərə dair müraciətlərə 24 saat ərzində baxılır.",
+        "sources": [
+          "Vətəndaş müraciətlərinin qəbulu və baxılması qaydası"
+        ]
+      },
+      "latency_ms": 2429
+    },
+    {
+      "case": {
+        "question": "Nazirin qəbulu nə vaxtdır?",
+        "answerable": true,
+        "any": [
+          "öncədən",
+          "əvvəlcədən",
+          "məlumat veriləcək"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "Nazirliyin rəhbər vəzifəli şəxslərinin bölgələrdə baş tutacaq növbəti qəbulları ilə bağlı öncədən məlumat veriləcək. Konkret tarix mənbələrdə göstərilməyib.",
+        "sources": [
+          "Əlaqə, vətəndaş qəbulu və digər qurumlar"
+        ]
+      },
+      "latency_ms": 2444
+    },
+    {
+      "case": {
+        "question": "Oğlumun xəstəliyi var, hərbi xidmətə yararlıdırmı?",
+        "answerable": true,
+        "any": [
+          "59",
+          "Hərbi-həkim"
+        ]
+      },
+      "pred": {
+        "answerable": true,
+        "answer": "İlkin hərbi qeydiyyata alınarkən və hərbi xidmətə çağırılarkən vətəndaşların şəhadətləndirilməsi Azərbaycan Respublikası Nazirlər Kabinetinin 2008-ci il 29 fevral tarixli 59 nömrəli qərarı ilə təsdiq edilmiş \"Hərbi-həkim ekspertizası haqqında Əsasnamə\"yə uyğun olaraq aparılır.",
+        "sources": [
+          "Hərbi xidmətə yararlılıq"
+        ]
+      },
+      "latency_ms": 2223
+    },
+    {
+      "case": {
+        "question": "Avtomobil vergisi nə qədərdir?",
+        "answerable": false
+      },
+      "pred": {
+        "answerable": false,
+        "answer": "",
+        "sources": []
+      },
+      "latency_ms": 1706
+    },
+    {
+      "case": {
+        "question": "Pasportu necə dəyişdirə bilərəm?",
+        "answerable": false
+      },
+      "pred": {
+        "answerable": false,
+        "answer": "",
+        "sources": []
+      },
+      "latency_ms": 1266
+    },
+    {
+      "case": {
+        "question": "Mənim pensiyamın məbləği nə qədərdir?",
+        "answerable": false
+      },
+      "pred": {
+        "answerable": false,
+        "answer": "",
+        "sources": []
+      },
+      "latency_ms": 4540
+    },
+    {
+      "case": {
+        "question": "İşsizlik müavinətinin məbləği nə qədərdir?",
+        "answerable": false
+      },
+      "pred": {
+        "answerable": false,
+        "answer": "",
+        "sources": []
+      },
+      "latency_ms": 2156
+    },
+    {
+      "case": {
+        "question": "Ana kapitalı nə vaxt veriləcək?",
+        "answerable": false
+      },
+      "pred": {
+        "answerable": false,
+        "answer": "",
+        "sources": []
+      },
+      "latency_ms": 1961
+    },
+    {
+      "case": {
+        "question": "Какой штраф за неправильную парковку?",
+        "answerable": false,
+        "lang": "ru"
+      },
+      "pred": {
+        "answerable": false,
+        "answer": "",
+        "sources": []
+      },
+      "latency_ms": 1930
+    }
+  ]
+}

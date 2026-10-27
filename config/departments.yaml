@@ -1,0 +1,60 @@
+# Şöbələr. Yönləndirmə agenti müraciətin şöbəsini "competence" mətninə əsasən seçir,
+# ona görə səlahiyyətləri konkret yazın.
+# NÜMUNƏ SİYAHI (sosial müdafiə sahəsi, mövzular üzrə): pilotdan əvvəl qurumun real struktur
+# bölmələri ilə əvəz olunmalıdır.
+# "general" şöbəsi mütləqdir: aidiyyəti müəyyən olunmayan müraciətlər ora düşür.
+# Dəyişiklikdən sonra: python -m app.manage sync-config
+departments:
+  - code: general
+    name: Ümumi şöbə
+    competence: >-
+      Digər şöbələrə aid olmayan və ya aidiyyəti müəyyən olunmayan müraciətlər, vətəndaş qəbulu,
+      qurumun işi barədə təkliflər.
+
+  - code: pensiya
+    name: Pensiya və sosial ödənişlər şöbəsi
+    competence: >-
+      Pensiya, sosial müavinət, təqaüd və kompensasiyaların təyini və ödənişi, ödənişin
+      gecikməsi, məbləğin hesablanması, sosial sığorta.
+
+  - code: udsy
+    name: Ünvanlı dövlət sosial yardım şöbəsi
+    competence: >-
+      Ünvanlı dövlət sosial yardımın (ÜDSY) təyini, müraciətə baxılması, imtina qərarları,
+      ödənişlər, ailə tərkibi və gəlirlərin yoxlanılması.
+
+  - code: elillik
+    name: Əlillik və tibbi-sosial ekspertiza şöbəsi
+    competence: >-
+      Əlilliyin müəyyən edilməsi və təkrar qiymətləndirilməsi, forma-88, əlillik dərəcəsi,
+      tibbi-sosial ekspertiza, reabilitasiya vasitələri.
+
+  - code: mesgulluq
+    name: Məşğulluq şöbəsi
+    competence: >-
+      İşsizlik, işaxtaran kimi qeydiyyat, vakansiyalar, işsizlikdən sığorta ödənişi, peşə
+      hazırlığı, özünüməşğulluq proqramı.
+
+  - code: sosial_xidmet
+    name: Sosial xidmətlər şöbəsi
+    competence: >-
+      Sosial xidmətlər, birdəfəlik maddi yardım, aztəminatlı və çoxuşaqlı ailələrə, tənha
+      yaşlılara, əlilliyi olan şəxslərə qayğı, ərzaq və digər natural yardımlar.
+
+  - code: menzil
+    name: Mənzil təminatı şöbəsi
+    competence: >-
+      Şəhid ailələrinin, müharibə ilə əlaqədar əlilliyi olan şəxslərin və Vətən Müharibəsi
+      Qəhrəmanlarının mənzil (fərdi ev) ilə təminatı, mənzil növbəsi.
+
+  - code: emek
+    name: Əmək münasibətləri şöbəsi
+    competence: >-
+      Əmək hüquqlarının pozulması, əmək müqaviləsi, əməkhaqqının ödənilməməsi, işdən qanunsuz
+      azad edilmə, əməyin mühafizəsi.
+
+  - code: huquq
+    name: Hüquq şöbəsi
+    competence: >-
+      Qurumun qərarlarından şikayətlər, hüquqi izahatlar, sənədlərin verilməsindən imtina ilə
+      bağlı mübahisələr, məhkəmə qərarlarının icrası.

@@ -1,0 +1,157 @@
+{
+  "id": "muracDailyRepor1",
+  "name": "Müraciət: gündəlik hesabat (iş günləri 18:00)",
+  "active": false,
+  "nodes": [
+    {
+      "id": "İş günləri 18:00-t",
+      "name": "İş günləri 18:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 18 * * 1-5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "stats-p",
+      "name": "v_daily_stats",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        240,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "muracPgReadonly1",
+          "name": "Müraciət bazası (yalnız oxuma)"
+        }
+      },
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM v_daily_stats;",
+        "options": {}
+      }
+    },
+    {
+      "id": "Hesabatın mətni-c",
+      "name": "Hesabatın mətni",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        0
+      ],
+      "parameters": {
+        "jsCode": "// v_daily_stats: şəxsi məlumat yoxdur, yalnız saylar\nconst s = $input.first().json;\nconst show = (v) => (v === null || v === undefined) ? '—' : String(v);\nconst hours = (v) => (v === null || v === undefined) ? '—' : `${Number(v).toFixed(1)} iş saatı`;\nconst pct = (v) => (v === null || v === undefined) ? '—' : `${Math.round(Number(v) * 100)}%`;\nconst day = String(s.day).slice(0, 10).split('-').reverse().join('.');\nconst text = [\n  `📊 Gündəlik hesabat · ${day}`,\n  `Daxil olub: ${show(s.appeals_created)}`,\n  `Cavablandırılıb: ${show(s.appeals_answered)}`,\n  `Bağlanıb: ${show(s.appeals_closed)}`,\n  `Açıq: ${show(s.open_total)} (təyin olunmayıb: ${show(s.unassigned_total)})`,\n  `Müddəti keçib: ${show(s.overdue_total)}`,\n  `Median təyinat vaxtı: ${hours(s.median_assign_work_hours)}`,\n  `Median cavab vaxtı: ${hours(s.median_answer_work_hours)}`,\n  `AI-nin özü cavablandırdığı suallar: ${show(s.ai_answers)}`,\n  `👍 payı (30 gün): ${pct(s.satisfaction_rate_30d)}`,\n].join('\\n');\nreturn [{ json: { text } }];"
+      }
+    },
+    {
+      "id": "Rəhbərə göndər-h",
+      "name": "Rəhbərə göndər",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://api:8000/internal/notify",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 120000
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ target: 'head', text: $json.text, only_workday: true }) }}"
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "muracSvcToken001",
+          "name": "Müraciət API servis tokeni"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "id": "manual-t",
+      "name": "Əl ilə test",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        200
+      ],
+      "parameters": {}
+    }
+  ],
+  "connections": {
+    "İş günləri 18:00": {
+      "main": [
+        [
+          {
+            "node": "v_daily_stats",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "v_daily_stats": {
+      "main": [
+        [
+          {
+            "node": "Hesabatın mətni",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hesabatın mətni": {
+      "main": [
+        [
+          {
+            "node": "Rəhbərə göndər",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Əl ilə test": {
+      "main": [
+        [
+          {
+            "node": "v_daily_stats",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Baku",
+    "errorWorkflow": "muracErrorNotif1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all"
+  },
+  "pinData": {}
+}

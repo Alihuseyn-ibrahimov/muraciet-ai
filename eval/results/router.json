@@ -1,0 +1,358 @@
+{
+  "agent": "router",
+  "model": "anthropic/claude-haiku-5-5 effort=low",
+  "n": 28,
+  "run_at": "2026-10-21T19:13:53+04:00",
+  "metrics": {
+    "accuracy": 1.0,
+    "failures": 0,
+    "by_label": {
+      "clarification_reply": {
+        "n": 2,
+        "accuracy": 1.0
+      },
+      "greeting": {
+        "n": 3,
+        "accuracy": 1.0
+      },
+      "human": {
+        "n": 2,
+        "accuracy": 1.0
+      },
+      "new_appeal": {
+        "n": 7,
+        "accuracy": 1.0
+      },
+      "off_topic": {
+        "n": 2,
+        "accuracy": 1.0
+      },
+      "question": {
+        "n": 8,
+        "accuracy": 1.0
+      },
+      "status": {
+        "n": 4,
+        "accuracy": 1.0
+      }
+    },
+    "by_lang": {
+      "az": {
+        "n": 20,
+        "accuracy": 1.0
+      },
+      "ru": {
+        "n": 5,
+        "accuracy": 1.0
+      },
+      "translit": {
+        "n": 3,
+        "accuracy": 1.0
+      }
+    },
+    "errors": []
+  },
+  "latency_ms": {
+    "p50": 1480,
+    "p95": 4043
+  },
+  "rows": [
+    {
+      "case": {
+        "text": "Pensiya ayın neçəsində köçürülür?",
+        "intent": "question"
+      },
+      "pred": {
+        "intent": "question"
+      },
+      "latency_ms": 6323
+    },
+    {
+      "case": {
+        "text": "Əlilliyə necə müraciət edim?",
+        "intent": "question"
+      },
+      "pred": {
+        "intent": "question"
+      },
+      "latency_ms": 1176
+    },
+    {
+      "case": {
+        "text": "Mənə sosial yardım düşür?",
+        "intent": "question"
+      },
+      "pred": {
+        "intent": "question"
+      },
+      "latency_ms": 1475
+    },
+    {
+      "case": {
+        "text": "Qaynar xəttiniz neçədir?",
+        "intent": "question"
+      },
+      "pred": {
+        "intent": "question"
+      },
+      "latency_ms": 1458
+    },
+    {
+      "case": {
+        "text": "Nazirlikdə necə işə düzələ bilərəm?",
+        "intent": "question"
+      },
+      "pred": {
+        "intent": "question"
+      },
+      "latency_ms": 2670
+    },
+    {
+      "case": {
+        "text": "udsy ye nece muraciet edim?",
+        "intent": "question",
+        "lang": "translit"
+      },
+      "pred": {
+        "intent": "question"
+      },
+      "latency_ms": 1498
+    },
+    {
+      "case": {
+        "text": "Как оформить инвалидность?",
+        "intent": "question",
+        "lang": "ru"
+      },
+      "pred": {
+        "intent": "question"
+      },
+      "latency_ms": 1573
+    },
+    {
+      "case": {
+        "text": "Forma-88 nədir?",
+        "intent": "question",
+        "has_open_question": true
+      },
+      "pred": {
+        "intent": "question"
+      },
+      "latency_ms": 1368
+    },
+    {
+      "case": {
+        "text": "Pensiyam 3 aydır köçmür, araşdırmağınızı xahiş edirəm",
+        "intent": "new_appeal"
+      },
+      "pred": {
+        "intent": "new_appeal"
+      },
+      "latency_ms": 1452
+    },
+    {
+      "case": {
+        "text": "isegoturen 2 aydir maasimi vermir, sikayet etmek isteyirem",
+        "intent": "new_appeal",
+        "lang": "translit"
+      },
+      "pred": {
+        "intent": "new_appeal"
+      },
+      "latency_ms": 2003
+    },
+    {
+      "case": {
+        "text": "Мне незаконно отказали в адресной социальной помощи, прошу разобраться",
+        "intent": "new_appeal",
+        "lang": "ru"
+      },
+      "pred": {
+        "intent": "new_appeal"
+      },
+      "latency_ms": 1259
+    },
+    {
+      "case": {
+        "text": "ÜDSY ərizəmə niyə imtina verildiyini öyrənmək istəyirəm",
+        "intent": "new_appeal"
+      },
+      "pred": {
+        "intent": "new_appeal"
+      },
+      "latency_ms": 1234
+    },
+    {
+      "case": {
+        "text": "Əlilliyi olan qonşuma birdəfəlik yardım ayrılmasını xahiş edirəm",
+        "intent": "new_appeal"
+      },
+      "pred": {
+        "intent": "new_appeal"
+      },
+      "latency_ms": 4043
+    },
+    {
+      "case": {
+        "text": "Qəbul mərkəzində onlayn növbə sistemi tətbiq etməyi təklif edirəm",
+        "intent": "new_appeal"
+      },
+      "pred": {
+        "intent": "new_appeal"
+      },
+      "latency_ms": 1657
+    },
+    {
+      "case": {
+        "text": "Salam, işdən qanunsuz çıxarılmışam",
+        "intent": "new_appeal"
+      },
+      "pred": {
+        "intent": "new_appeal"
+      },
+      "latency_ms": 1205
+    },
+    {
+      "case": {
+        "text": "Göndərdiyim şikayətə baxıblar?",
+        "intent": "status"
+      },
+      "pred": {
+        "intent": "status"
+      },
+      "latency_ms": 1367
+    },
+    {
+      "case": {
+        "text": "MR-2026-000245 nömrəli müraciətimin statusu nədir?",
+        "intent": "status"
+      },
+      "pred": {
+        "intent": "status"
+      },
+      "latency_ms": 1692
+    },
+    {
+      "case": {
+        "text": "muracietime baxildimi, hele cavab yoxdur",
+        "intent": "status",
+        "lang": "translit"
+      },
+      "pred": {
+        "intent": "status"
+      },
+      "latency_ms": 1213
+    },
+    {
+      "case": {
+        "text": "Что с моим обращением?",
+        "intent": "status",
+        "lang": "ru"
+      },
+      "pred": {
+        "intent": "status"
+      },
+      "latency_ms": 1486
+    },
+    {
+      "case": {
+        "text": "Məni əməkdaşla birləşdirin",
+        "intent": "human"
+      },
+      "pred": {
+        "intent": "human"
+      },
+      "latency_ms": 1624
+    },
+    {
+      "case": {
+        "text": "Хочу поговорить с живым человеком",
+        "intent": "human",
+        "lang": "ru"
+      },
+      "pred": {
+        "intent": "human"
+      },
+      "latency_ms": 1147
+    },
+    {
+      "case": {
+        "text": "Salam",
+        "intent": "greeting"
+      },
+      "pred": {
+        "intent": "greeting"
+      },
+      "latency_ms": 1671
+    },
+    {
+      "case": {
+        "text": "Təşəkkürlər, sağ olun",
+        "intent": "greeting"
+      },
+      "pred": {
+        "intent": "greeting"
+      },
+      "latency_ms": 1641
+    },
+    {
+      "case": {
+        "text": "Спасибо!",
+        "intent": "greeting",
+        "lang": "ru"
+      },
+      "pred": {
+        "intent": "greeting"
+      },
+      "latency_ms": 1049
+    },
+    {
+      "case": {
+        "text": "Sabah Bakıda hava necə olacaq?",
+        "intent": "off_topic"
+      },
+      "pred": {
+        "intent": "off_topic"
+      },
+      "latency_ms": 2059
+    },
+    {
+      "case": {
+        "text": "Mənə Python kodu yaz",
+        "intent": "off_topic"
+      },
+      "pred": {
+        "intent": "off_topic"
+      },
+      "latency_ms": 1098
+    },
+    {
+      "case": {
+        "text": "Kapital Bankdır, kartım dəyişməyib",
+        "intent": "clarification_reply",
+        "has_open_question": true,
+        "dialogue": [
+          [
+            "bot",
+            "Əməkdaşın sualı: Pensiyanız hansı banka köçürülürdü?"
+          ]
+        ]
+      },
+      "pred": {
+        "intent": "clarification_reply"
+      },
+      "latency_ms": 1690
+    },
+    {
+      "case": {
+        "text": "Bəli, son ödəniş avqust ayında olub",
+        "intent": "clarification_reply",
+        "has_open_question": true
+      },
+      "pred": {
+        "intent": "clarification_reply"
+      },
+      "latency_ms": 1167
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{"subject": "Pensiya köçmür", "summary": "Pensiyam 3 aydır köçmür.", "department": "pensiya"}
+{"subject": "Müavinət", "summary": "Sosial müavinətimin məbləği səhv hesablanıb.", "department": "pensiya"}
+{"subject": "Пенсия", "summary": "Не пришла пенсия за этот месяц.", "department": "pensiya", "lang": "ru"}
+{"subject": "ÜDSY", "summary": "Ünvanlı sosial yardım üçün müraciətim 2 aydır cavabsız qalıb.", "department": "udsy"}
+{"subject": "ÜDSY ödənişi", "summary": "udsy odenisi gecikir", "department": "udsy", "lang": "translit"}
+{"subject": "ÜDSY imtinası", "summary": "Ünvanlı sosial yardım ərizəmə verilən imtina qərarından şikayət edirəm.", "department": ["udsy", "huquq"]}
+{"subject": "Təkrar qiymətləndirmə", "summary": "Əlilliyimin təkrar qiymətləndirilməsini xahiş edirəm.", "department": "elillik"}
+{"subject": "Forma-88", "summary": "Poliklinika forma-88 göndərişini sistemə daxil etsə də, ekspertiza aparılmır.", "department": "elillik"}
+{"subject": "Инвалидность", "summary": "Как пройти повторную экспертизу инвалидности?", "department": "elillik", "lang": "ru"}
+{"subject": "İşsizlik", "summary": "İşsizəm, işaxtaran kimi qeydiyyata alınmaq istəyirəm.", "department": "mesgulluq"}
+{"subject": "Sığorta ödənişi", "summary": "İşsizlikdən sığorta ödənişi mənə təyin olunmayıb.", "department": "mesgulluq"}
+{"subject": "Yaşlı qonşu", "summary": "Tənha yaşlı qonşuma sosial xidmət göstərilməsini xahiş edirəm.", "department": "sosial_xidmet"}
+{"subject": "Birdəfəlik yardım", "summary": "Əlilliyi olan şəxs kimi birdəfəlik maddi yardım almaq istəyirəm.", "department": "sosial_xidmet"}
+{"subject": "Çoxuşaqlı ailə", "summary": "Çoxuşaqlı aztəminatlı ailəyik, maddi köməyə ehtiyacımız var.", "department": ["sosial_xidmet", "udsy"]}
+{"subject": "Mənzil növbəsi", "summary": "Şəhid ailəsiyik, mənzil növbəsində 5 ildir gözləyirik.", "department": "menzil"}
+{"subject": "Fərdi ev", "summary": "Müharibə ilə əlaqədar əlilliyi olan şəxs kimi fərdi evlə təmin olunmaq istəyirəm.", "department": "menzil"}
+{"subject": "Əməkhaqqı", "summary": "İşəgötürən 2 aydır əməkhaqqımı vermir.", "department": "emek"}
+{"subject": "İşdən çıxarılma", "summary": "İşdən qanunsuz azad edilmişəm.", "department": "emek"}
+{"subject": "Əmək müqaviləsi", "summary": "isegoturen emek muqavilesi baglamir", "department": "emek", "lang": "translit"}
+{"subject": "Hüquqi izahat", "summary": "Nazirliyin mənimlə bağlı qərarının hüquqi əsasını izah etməyinizi xahiş edirəm.", "department": "huquq"}
+{"subject": "Arayışdan imtina", "summary": "Mənə arayış verilməsindən imtina edildi, bunu əsassız hesab edirəm.", "department": "huquq"}
+{"subject": "Virtual köməkçi", "summary": "Virtual köməkçinin işinə dair təklifim var.", "department": "general"}
+{"subject": "Növbə", "summary": "Qəbul mərkəzində növbə çox uzun olur.", "department": "general"}

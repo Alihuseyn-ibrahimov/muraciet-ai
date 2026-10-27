@@ -1,0 +1,21 @@
+# Seçmə təsdiq (spec 7-ci bölmə): cavab bu şərtlərdən BİRİ ödənəndə koordinator təsdiqinə düşür.
+# Koordinatorun öz yazdığı cavab təsdiqə düşmür.
+
+# Müraciət kateqoriyaları: complaint, request, suggestion, information
+categories: [complaint]
+
+# Prioritetlər: normal, high, urgent
+priorities: [high, urgent]
+
+# Nəticələr: satisfied, partial, rejected, explained
+# rejected və partial cavablarında şikayət qaydası mütləq izah olunur (m. 7.8)
+outcomes: [rejected, partial]
+
+# Triaj agenti hüquqi məsələ qeyd edibsə
+legal_issue: true
+
+# Keyfiyyət agenti ən azı bir kritik (critical) qeyd tapıbsa
+qa_critical: true
+
+# Triaj və ya Keyfiyyət agenti xəta veribsə (təhlükəsiz standart)
+agent_failure: true

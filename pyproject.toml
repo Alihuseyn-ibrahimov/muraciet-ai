@@ -1,0 +1,10 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+# eval testləri real LLM çağırır və pul xərcləyir: yalnız əl ilə, pytest -m eval
+addopts = "-m 'not eval'"
+markers = [
+    "unit: xarici asılılığı olmayan testlər",
+    "integration: test PostgreSQL və Redis tələb edir (docker compose)",
+    "eval: real LLM ilə agent qiymətləndirməsi, əl ilə işə salınır",
+]

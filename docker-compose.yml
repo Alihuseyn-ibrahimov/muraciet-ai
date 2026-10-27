@@ -1,0 +1,132 @@
+# Vətəndaş müraciətləri sistemi (spec 4-cü bölmə). Bir image, beş proses:
+#   api          FastAPI: botların update-ləri, n8n-in daxili endpoint-ləri, admin API, veb-vidcet
+#   worker       outbox (Telegram-a zəmanətli göndərmə) və agent işləri (triaj, cavab layihəsi)
+#   citizen-bot  vətəndaş botunun runner-i (polling → api)
+#   staff-bot    əməkdaş botunun runner-i (polling → api)
+#   migrate      birdəfəlik: Alembic, LangGraph checkpoint cədvəlləri, rollar, şöbələr (idempotent)
+# Port açılmır: botlar polling edir, n8n api-yə daxili şəbəkədə çatır. İnkişafda portlar yalnız
+# 127.0.0.1-ə açılır (docker-compose.override.yml). Production: docker-compose.prod.yml (Docker secrets).
+#
+# İlk qurulum:
+#   docker compose up -d postgres redis ollama
+#   docker compose exec ollama ollama pull bge-m3
+#   docker compose run --rm migrate
+#   docker compose run --rm migrate python -m app.manage ingest
+#   docker compose up -d
+#   docker compose run --rm migrate python -m app.manage invite coordinator --admin
+
+x-app: &app
+  build: .
+  image: muraciet-ai
+  env_file:  # inkişaf: .env; production-da yalnız .env.prod olur (docker-compose.prod.yml)
+    - { path: .env, required: false }
+  environment: &app-env
+    # .env-dəki ünvanlar host üçündür (127.0.0.1:...), konteynerlər daxili şəbəkədən qoşulur
+    APP_DATABASE_URL: postgresql+psycopg://muraciet_app:${APP_DB_PASSWORD:-}@postgres:5432/muraciet_v2
+    MIGRATION_DATABASE_URL: postgresql+psycopg://muraciet:${POSTGRES_PASSWORD:-muraciet}@postgres:5432/muraciet_v2
+    EMBEDDINGS_URL: http://ollama:11434
+    REDIS_URL: redis://redis:6379/0
+    API_BASE_URL: http://api:8000
+  restart: unless-stopped
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: muraciet
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-muraciet}
+      POSTGRES_DB: muraciet_v2
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U muraciet -d muraciet_v2"]
+      interval: 5s
+      retries: 10
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 10
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    volumes: [ollama:/root/.ollama]
+    restart: unless-stopped
+    # NVIDIA GPU varsa:
+    # deploy: { resources: { reservations: { devices: [{ driver: nvidia, count: all, capabilities: [gpu] }] } } }
+
+  migrate:
+    <<: *app
+    command: ["sh", "-c", "python -m app.manage migrate && python -m app.manage sync-config"]
+    depends_on:
+      postgres: { condition: service_healthy }
+    restart: "no"
+    profiles: ["tools"]
+
+  api:
+    <<: *app
+    command: ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8000"]
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  worker:
+    <<: *app
+    command: ["python", "-m", "app.worker"]
+    depends_on:
+      postgres: { condition: service_healthy }
+
+  citizen-bot:
+    <<: *app
+    command: ["python", "-m", "bot.runner", "citizen"]
+    depends_on:
+      api: { condition: service_healthy }
+
+  staff-bot:
+    <<: *app
+    command: ["python", "-m", "bot.runner", "staff"]
+    depends_on:
+      api: { condition: service_healthy }
+
+  # SLA monitoru, gündəlik hesabat, xəta bildirişi, saxlama təmizliyi (n8n/v2/*.json, README)
+  n8n:
+    image: n8nio/n8n:2.29.7
+    environment:
+      GENERIC_TIMEZONE: Asia/Baku
+      N8N_SECURE_COOKIE: "false"
+    volumes: [n8n:/home/node/.n8n]
+    restart: unless-stopped
+
+  # Bazanın şifrəli gündəlik ehtiyat nüsxəsi (scripts/backup.sh): ./backups/, BACKUP_KEEP_DAYS gün saxlanılır.
+  # Parol: secrets/backup_passphrase (git-ə düşmür, serverdən kənarda da saxlayın). Bərpa sınağı:
+  #   docker compose exec backup sh /scripts/backup.sh verify
+  backup:
+    image: pgvector/pgvector:pg16
+    entrypoint: ["sh", "/scripts/backup.sh"]
+    command: ["daemon"]
+    environment:
+      PGPASSWORD: ${POSTGRES_PASSWORD:-muraciet}
+      BACKUP_KEEP_DAYS: ${BACKUP_KEEP_DAYS:-14}
+      BACKUP_HOUR: ${BACKUP_HOUR:-2}
+    volumes: ["./scripts/backup.sh:/scripts/backup.sh:ro", "./backups:/backups"]
+    secrets: [backup_passphrase]
+    depends_on:
+      postgres: { condition: service_healthy }
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  ollama:
+  n8n:
+
+secrets:
+  backup_passphrase: { file: ./secrets/backup_passphrase }

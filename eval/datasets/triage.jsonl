@@ -1,0 +1,23 @@
+{"subject": "Pensiya köçmür", "summary": "Pensiyam 3 aydır köçmür.", "category": "complaint", "priority": ["normal", "high"], "legal_issue": false}
+{"subject": "Əməkhaqqı", "summary": "İşəgötürən 2 aydır əməkhaqqımı vermir.", "category": "complaint", "priority": ["normal", "high"], "legal_issue": false}
+{"subject": "Evsiz qalmışıq", "summary": "Kirayə qaldığımız evdən çıxarılmışıq, uşaqlarla bu gecə qalmağa yerimiz yoxdur.", "category": ["request", "complaint"], "priority": "urgent", "legal_issue": false}
+{"subject": "Həyati dərman", "summary": "Əlilliyi olan uşağımın həyati dərmanı bitib, ala bilmirik, sabaha qədər lazımdır.", "category": ["request", "complaint"], "priority": "urgent", "legal_issue": false}
+{"subject": "ÜDSY imtinası", "summary": "Ünvanlı sosial yardım ərizəmə əsassız imtina verilib, qərar qanunsuzdur.", "category": "complaint", "priority": "normal", "legal_issue": true}
+{"subject": "Məhkəmə qərarı", "summary": "Məhkəmənin işə bərpa haqqında qanuni qüvvəyə minmiş qərarı işəgötürən tərəfindən icra olunmur.", "category": "complaint", "priority": ["normal", "high"], "legal_issue": true}
+{"subject": "ÜDSY müraciəti", "summary": "Ünvanlı sosial yardım almaq üçün müraciət etmək istəyirəm.", "category": "request", "priority": "normal", "legal_issue": false}
+{"subject": "Təkrar qiymətləndirmə", "summary": "Əlilliyimin təkrar qiymətləndirilməsi üçün müraciət edirəm.", "category": "request", "priority": "normal", "legal_issue": false}
+{"subject": "Tənha yaşlı", "summary": "Tənha yaşlı qonşum yataq xəstəsidir, ona baxan yoxdur, sosial xidmət göstərilməsini xahiş edirəm.", "category": "request", "priority": "high", "legal_issue": false}
+{"subject": "Portal xətası", "summary": "Elektron portalda müraciət düyməsi işləmir.", "category": "complaint", "priority": "normal", "legal_issue": false}
+{"subject": "Onlayn növbə", "summary": "Qəbul mərkəzində onlayn növbə sistemi tətbiq olunsun.", "category": "suggestion", "priority": "normal", "legal_issue": false}
+{"subject": "SMS bildiriş", "summary": "Pensiya ödənişinin vaxtı barədə SMS bildiriş göndərilməsini təklif edirəm.", "category": "suggestion", "priority": "normal", "legal_issue": false}
+{"subject": "Pensiya artımı", "summary": "Pensiya artımı barədə məlumat almaq istəyirəm.", "category": "information", "priority": "normal", "legal_issue": false}
+{"subject": "ÜDSY şərtləri", "summary": "Ünvanlı sosial yardımın təyin olunma şərtlərini öyrənmək istəyirəm.", "category": "information", "priority": "normal", "legal_issue": false}
+{"subject": "Mənzil növbəsi", "summary": "Şəhid ailəsiyik, mənzil növbəsində 5 ildir gözləyirik.", "category": ["complaint", "request"], "priority": ["normal", "high"], "legal_issue": false}
+{"subject": "Kobud davranış", "summary": "Qəbul mərkəzində əməkdaş mənimlə kobud danışdı.", "category": "complaint", "priority": "normal", "legal_issue": false}
+{"subject": "Evin damı", "summary": "Müharibə əlili olan qardaşıma verilən evin damı uçub, yağış içəri dolur.", "category": ["complaint", "request"], "priority": ["high", "urgent"], "legal_issue": false}
+{"subject": "Qaz kəsilib", "summary": "Çoxuşaqlı ailəyik, borca görə qaz kəsilib, qışda uşaqlar soyuqdadır.", "category": ["request", "complaint"], "priority": ["high", "urgent"], "legal_issue": false}
+{"subject": "Birdəfəlik yardım", "summary": "Birdəfəlik maddi yardım almaq istəyirəm.", "category": "request", "priority": "normal", "legal_issue": false}
+{"subject": "İş axtarıram", "summary": "İşsizəm, iş tapmaqda kömək istəyirəm.", "category": "request", "priority": "normal", "legal_issue": false}
+{"subject": "Arayışda səhv", "summary": "Mənə verilən arayışda soyadım səhv yazılıb, düzəldilməsini xahiş edirəm.", "category": "request", "priority": "normal", "legal_issue": false}
+{"subject": "Пособие", "summary": "Уже два месяца не приходит пособие по инвалидности.", "category": "complaint", "priority": ["normal", "high"], "legal_issue": false, "lang": "ru"}
+{"subject": "Pensiya", "summary": "pensiyam 2 aydir kocmur", "category": "complaint", "priority": ["normal", "high"], "legal_issue": false, "lang": "translit"}

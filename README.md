@@ -1,3 +1,26 @@
+# Müraciət AI — Citizen Request System for Government Agencies
+
+Citizens write to a Telegram bot. If the AI can answer from the agency's knowledge base, it replies with sources. If the request needs investigation, the system registers it as an official request and routes it to a coordinator. Staff answer through a separate staff bot, and the answer is delivered back to the citizen. Legal deadlines are calculated under Azerbaijan's Law on Citizens' Appeals and tracked automatically.
+
+## Design principles
+- **One agent, one job** — 10 specialised agents (safety, routing, RAG answers, intake, triage, department routing, draft reply, quality check, knowledge curator, reporting analyst), each with its own prompt, schema and model
+- **AI proposes, code and humans decide** — the state machine, permissions and audit log live in code; if the AI fails, the system falls back to more human control
+- **Personal data never reaches the LLM** — names, national ID numbers, phones and addresses are masked before every LLM call and restored afterwards; sensitive fields are encrypted in the database
+- **No lost messages** — every outgoing Telegram message goes through a transactional outbox with retries
+
+## Architecture
+Citizen bot and staff bot → FastAPI API (privacy layer, LangGraph agents, workflow engine, notifier) → PostgreSQL + pgvector, Redis and a background worker. n8n handles deadline (SLA) checks, daily reports, error alerts and data-retention cleanup.
+
+## Tech stack
+Python · FastAPI · LangGraph · Claude (Haiku / Sonnet) · PostgreSQL + pgvector · Redis · Ollama (bge-m3 embeddings) · n8n · Docker Compose · Telegram Bot API
+
+## Getting started
+See the installation steps below (Docker Compose) and `docs/deploy.md` for production.
+
+---
+
+## Azərbaycan dilində
+
 # Müraciət AI — dövlət qurumu üçün vətəndaş müraciətləri sistemi
 
 Vətəndaş Telegram botuna yazır. AI qurumun bilik bazasından cavab verə bilirsə, mənbə ilə cavablandırır.
